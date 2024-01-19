@@ -299,6 +299,49 @@ img {
     flex-direction: row;
     align-items: center;
 }
+.follow{
+    height: 110px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #ffffff9d;
+    margin-top: -100px;
+    margin-right: -538px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.follow p {
+    color: rgb(0, 0, 0);
+    margin-top: -33px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    padding-left: 30px;
+    text-shadow: 0px 6px 7px #050201;
+}
+.follow i{
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+.logo2  {
+    margin-right: 10px;
+    margin-top: -5px;
+    font-size: 25px;
+    color: rgb(251, 245, 245);
+    text-shadow: 0px 6px 7px #050201;
+    padding-left: 100px;
+}
+.info1 {
+    font-size: 17px;
+    text-shadow: 0px 6px 7px #000000;
+}
+.separateur-horizontal-3 {
+    outline: none;
+    height: 1.5px;
+    border: none;
+    background-color: white;
+}
 
 /**** 3 btn ****/
 
