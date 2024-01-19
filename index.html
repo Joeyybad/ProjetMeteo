@@ -19,11 +19,12 @@
         <img src="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&"
             alt="logo InstaMeteo">
         <span class="titre-logo">InstaMétéo</span>
-        <form action="">
+        <form id="searchForm" action="">
             <div class="recherche">
-                <input type="text" placeholder="Rechercher..." class="text-input">
+                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput">
             </div>
         </form>
+        
 
 
 
@@ -158,8 +159,8 @@
     </footer> -->
     <script>
         // Fonction pour effectuer la requête HTTP et traiter la réponse
-        function fetchData() {
-            var apiUrl = "http://api.weatherapi.com/v1/current.json?key=1708858d94e946a2b6393534241901&q=paris&aqi=no";
+        function fetchData(city) {
+            var apiUrl = "http://api.weatherapi.com/v1/current.json?key=1708858d94e946a2b6393534241901&q=" + city + "&aqi=no";
     
             // Effectuer la requête avec fetch
             fetch(apiUrl)
@@ -186,33 +187,60 @@
     
                     // Changer l'image en fonction du niveau de nuage
                     var weatherIcon = document.getElementById("weatherIcon");
-
-                switch (true) {
-                    case (cloud >= 0 && cloud <= 25):
-                        weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/2698/2698240.png";
-                        break;
-                    case (cloud > 25 && cloud <= 50):
-                        weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850024969777203/2698240.png?ex=65bcc3c4&is=65aa4ec4&hm=5d96eccec5e4e81f6bb70abafa647764f4a3589875868c51d8d78b525d011e52&";
-                        break;
-                    case (cloud > 50 && cloud <= 100):
-                        // Add your image URL for the cloud range 100 to 200
-                        weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850039767285770/cloud-removebg-preview.png?ex=65bcc3c8&is=65aa4ec8&hm=da7ff1963bfccfc93ee91431cec7daec4c16ff65c1bcffb937e069f0a5ad9180&";
-                        break;
-                    // Add more cases as needed
-                    default:
-                        // Default image if none of the cases match
-                        weatherIcon.src = "https://example.com/default-image.png";
-                        break;
-                }
-            })
-            .catch(error => {
-                console.error('Erreur lors de la récupération des données:', error);
-            });
+    
+                    switch (true) {
+                        case (cloud >= 0 && cloud <= 25):
+                            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/2698/2698240.png";
+                            break;
+                        case (cloud > 25 && cloud <= 50):
+                            weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850024969777203/2698240.png?ex=65bcc3c4&is=65aa4ec4&hm=5d96eccec5e4e81f6bb70abafa647764f4a3589875868c51d8d78b525d011e52&";
+                            break;
+                        case (cloud > 50 && cloud <= 100):
+                            // Add your image URL for the cloud range 100 to 200
+                            weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850039767285770/cloud-removebg-preview.png?ex=65bcc3c8&is=65aa4ec8&hm=da7ff1963bfccfc93ee91431cec7daec4c16ff65c1bcffb937e069f0a5ad9180&";
+                            break;
+                        // Add more cases as needed
+                        default:
+                            // Default image if none of the cases match
+                            weatherIcon.src = "https://example.com/default-image.png";
+                            break;
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des données:', error);
+                });
         }
     
-        // Appeler la fonction au chargement de la page
-        window.onload = fetchData;
+        // Gestionnaire d'événements pour la soumission du formulaire
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            // Empêcher le formulaire de se soumettre normalement
+            event.preventDefault();
+    
+            // Récupérer la valeur de la ville à partir de l'input
+            var cityInput = document.getElementById('cityInput');
+            var city = cityInput.value;
+    
+            // Appeler fetchData avec le nom de la ville
+            fetchData(city);
+        });
+    
+        // Fonction pour obtenir la localisation par défaut
+        function getDefaultLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // Appeler fetchData avec les coordonnées de la localisation par défaut
+                    fetchData(position.coords.latitude + ',' + position.coords.longitude);
+                });
+            } else {
+                // Si la géolocalisation n'est pas prise en charge, appeler fetchData avec une ville par défaut (paris)
+                fetchData('Le_mans');
+            }
+        }
+    
+        // Appeler la fonction au chargement de la page pour obtenir la localisation par défaut
+        window.onload = getDefaultLocation;
     </script>
+    
     
 </body>
 
