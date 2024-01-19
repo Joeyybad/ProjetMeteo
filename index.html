@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon"
         href="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&">
-    <script src="js\script.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>MaMétéo</title>
 </head>
@@ -19,7 +19,7 @@
         <img src="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&"
             alt="logo InstaMeteo">
         <span class="titre-logo">InstaMétéo</span>
-        <form id="searchForm" action="">
+        <form id="searchForm" action="#">
             <div class="recherche">
                 <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput">
             </div>
@@ -67,9 +67,7 @@
                 <div class="info">Orientation : <span id="orientation"></span></div>
             </div>
             <div class="UV">
-                <titre>
                     <i class="fa-regular fa-sun"></i><p>UV</p>
-                </titre>
                 <hr class="separateur-horizontal-2">
                 <div class="info">Indice UV : <span id="UV"></span></div>
             </div>
@@ -89,7 +87,7 @@
                 <hr class="separateur-horizontal-2">
                 <div class="progressbar-wrapper">
                     <div class="jour">lundi</div>
-                    <div class="logoTemps"><img src="images\black-sun-with-rays.256x256.png" class="imgPrev" alt="" srcset=""></div>
+                    <div class="logoTemps"><img src="black-sun-with-rays.256x256.png" class="imgPrev" alt="#" srcset="#"></div>
                     <div class="tempFaible">-1°</div>
                     <div class="progressbar progressbarMonday"></div>
                     <div class="tempForte">3°</div> 
@@ -97,7 +95,7 @@
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mardi</div>
-                    <div class="logoTemps"><img src="images\black-sun-with-rays.256x256.png" class="imgPrev" alt="" srcset=""></div>
+                    <div class="logoTemps"><img src="black-sun-with-rays.256x256.png" class="imgPrev" alt="#" srcset="#"></div>
                     <div class="tempFaible">3°</div>
                     <div class="progressbar progressbarMonday"></div>
                     <div class="tempForte">10°</div>
@@ -105,7 +103,7 @@
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mercredi</div>
-                    <div class="logoTemps"><img src="images\black-sun-with-rays.256x256.png" class="imgPrev" alt="" srcset=""></div>
+                    <div class="logoTemps"><img src="black-sun-with-rays.256x256.png" class="imgPrev" alt="#" srcset="#"></div>
                     <div class="tempFaible">9°</div>
                     <div class="progressbar progressbarTuesday"></div>
                     <div class="tempForte">17°</div>
@@ -113,7 +111,7 @@
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Jeudi</div>
-                    <div class="logoTemps"><img src="images\black-sun-with-rays.256x256.png" class="imgPrev" alt="" srcset=""></div>
+                    <div class="logoTemps"><img src="black-sun-with-rays.256x256.png" class="imgPrev" alt="#" srcset="#"></div>
                     <div class="tempFaible">-1°</div>
                     <div class="progressbar progressbarWednesday"></div>
                     <div class="tempForte">3°</div>
@@ -121,7 +119,7 @@
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Vendredi</div>
-                    <div class="logoTemps"><img src="images\black-sun-with-rays.256x256.png" class="imgPrev"alt="" srcset=""></div>
+                    <div class="logoTemps"><img src="black-sun-with-rays.256x256.png" class="imgPrev" alt="#" srcset="#"></div>
                     <div class="tempFaible">-1°</div>
                     <div class="progressbar progressBarThursday"></div>
                     <div class="tempForte">3°</div>
@@ -135,17 +133,15 @@
             </div>
         </div>
         <br>
-    </div>
     <div class="follow">
-        <titre>
             <i class="fa-solid fa-hashtag"></i><p>Suivez-nous !</p>
-        </titre>
         <hr class="separateur-horizontal-3">
         <div class ="logo2">
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-instagram"></i>
         </div>
+      </div> 
     </main>
 
 
