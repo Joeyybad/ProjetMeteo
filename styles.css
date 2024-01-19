@@ -479,32 +479,38 @@ img {
 
     body {
         background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
+        transition: all 500ms ease-in-out;
     }
 
     header {
         display: flex;
+        transition: all 500ms ease-in-out;
 
     }
 
     img {
         width: 150px;
+        transition: all 500ms ease-in-out;
     }
 
     .intemperies {
         position: absolute;
         display: none;
+        transition: all 500ms ease-in-out;
     }
 
     .ventNuage {
         margin-left: 0px;
         margin-top: 100px;
         max-width: 80%;
+        transition: all 500ms ease-in-out;
     }
 
     .UV {
         margin-left: 0px;
         margin-top: 50px;
         max-width: 80%;
+        transition: all 500ms ease-in-out;
     }
 
     .pression {
@@ -513,6 +519,7 @@ img {
         margin-top: 50px;
         margin-bottom: 50px;
         max-width: 80%;
+        transition: all 500ms ease-in-out;
     }
 
     .prevision {
@@ -522,6 +529,7 @@ img {
         max-width: 80%;
         width: 280px;
         height: 300px;
+        transition: all 500ms ease-in-out;
     }
 
     .recherche {
@@ -529,10 +537,12 @@ img {
         margin-left: 10%;
         margin-top: 10%;
         width: 80%;
+        transition: all 500ms ease-in-out;
     }
 
     .text-input {
         width: 70%;
+        transition: all 500ms ease-in-out;
     }
 
     .bandeauMeteo {
@@ -541,15 +551,18 @@ img {
         justify-content: center;
         flex-direction: column;
         text-align: center;
+        transition: all 500ms ease-in-out;
     }
 
     .separateur {
         display: none;
+        transition: all 500ms ease-in-out;
     }
 
     .temperature {
         margin-left: 30%;
         margin-right: 0px;
+        transition: all 500ms ease-in-out;
     }
 
     .icon-meteo {
@@ -558,11 +571,13 @@ img {
         margin-left: 25%;
         width: 20%;
         margin-bottom: -10%;
+        transition: all 500ms ease-in-out;
     }
 
     .localisation {
         margin-left: 25%;
         font-size: 250%;
+        transition: all 500ms ease-in-out;
     }
 
     .trois-bouttons {
@@ -570,5 +585,6 @@ img {
         justify-content: space-between;
         width: 95%;
         margin-top: 400Px;
+        transition: all 500ms ease-in-out;
     }
 }
