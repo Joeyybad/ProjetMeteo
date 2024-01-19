@@ -61,6 +61,8 @@ img {
     border-radius: 20px;
     margin: auto;
     margin-left: 150px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .text-input {
@@ -88,6 +90,8 @@ img {
     height: 100px;
     width: 5px;
     border-radius: 20px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.418);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .temperature {
@@ -113,7 +117,7 @@ img {
 
 /** Fin de la Partie Bandeau météo **/
 
-/** Petit panneau de merde **/
+/** Petit panneau **/
 
 .intemperies {
     height: 150px;
@@ -123,6 +127,8 @@ img {
     margin-left: -650px;
     padding-left: 25px;
     padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .intemperies p {
@@ -172,6 +178,8 @@ img {
     margin-top: 25px;
     padding-left: 25px;
     padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .ventNuage p {
@@ -199,13 +207,14 @@ img {
 
 .UV {
     height: 110px;
-    width: 225x;
     border-radius: 20px;
     background-color: #ffffff9d;
     margin-top: -260px;
     margin-left: -275px;
     padding-left: 25px;
     padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .UV p {
@@ -228,13 +237,14 @@ img {
 
 .pression {
     height: 110px;
-    width: 225x;
     border-radius: 20px;
     background-color: #ffffff9d;
     margin-top: 40px;
     margin-left: -275px;
     padding-left: 25px;
     padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .pression p {
@@ -264,6 +274,8 @@ img {
     position: absolute;
     margin-left: 100px;
     margin-top: -435px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
 .prevision p {
@@ -282,10 +294,43 @@ img {
     text-shadow: 0px 6px 7px #050201;
 }
 
-.titre { 
+.titre {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+/**** 3 btn ****/
+
+.trois-bouttons {
+    display: none;
+}
+
+.boutton {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
+    transition: 0.2s;
+    background-color: #ffffff9d;
+
+}
+
+.boutton:active {
+    background-color: #ffffff;
+    margin-top: 2px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}
+
+.boutton i {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    text-shadow: 0px 6px 7px #05020194;
 }
 
 /**** progressbar ****/
@@ -302,26 +347,26 @@ img {
     margin-right: 10px;
     color: black;
     font-family: "Poppins", sans-serif;
-    width: 50px ;
-    height:auto ;
+    width: 50px;
+    height: auto;
 }
 
 .tempFaible {
     margin-right: 10px;
     color: black;
     font-family: "Poppins", sans-serif;
-    width: 50px ;
+    width: 50px;
     /* margin: 3px; */
-    height:auto ;
+    height: auto;
     text-align: center;
 }
 
 .tempForte {
     color: black;
     margin: 2px;
-    font-family: "Poppins", sans-serif; 
-    width: 50px ;
-    height:auto ;
+    font-family: "Poppins", sans-serif;
+    width: 50px;
+    height: auto;
 }
 
 /*** toutes les progressbar***/
@@ -364,7 +409,7 @@ img {
     width: 50%;
 }
 
-.progressbar4{
+.progressbar4 {
     background: rgb(9, 9, 121);
     background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);
     color: white;
@@ -375,9 +420,10 @@ img {
     border-radius: 15px;
     width: 50%;
 }
-.progressbar5{
-    background: rgb(2,31,93);
-    background: linear-gradient(90deg, rgba(2,31,93,0.9417016806722689) 0%, rgba(0,122,190,1) 46%, rgba(128,208,252,1) 100%);
+
+.progressbar5 {
+    background: rgb(2, 31, 93);
+    background: linear-gradient(90deg, rgba(2, 31, 93, 0.9417016806722689) 0%, rgba(0, 122, 190, 1) 46%, rgba(128, 208, 252, 1) 100%);
     color: white;
     padding: 5px;
     margin: 6px;
@@ -393,7 +439,7 @@ img {
     font-family: "Poppins", sans-serif;
 }
 
-.separateur3{
+.separateur3 {
     outline: none;
     height: 1.5px;
     border: none;
@@ -404,6 +450,11 @@ img {
 /** Responsive **/
 
 @media screen and (max-width: 740px) {
+
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
+    }
+
     header {
         display: flex;
 
@@ -413,12 +464,85 @@ img {
         width: 150px;
     }
 
+    .intemperies {
+        position: absolute;
+        display: none;
+    }
+
+    .ventNuage {
+        margin-left: 0px;
+        margin-top: 100px;
+        max-width: 80%;
+    }
+
+    .UV {
+        margin-left: 0px;
+        margin-top: 50px;
+        max-width: 80%;
+    }
+
+    .pression {
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        max-width: 80%;
+    }
+
+    .prevision {
+        display: block;
+        margin-left: 0px;
+        margin-top: 0px;
+        max-width: 80%;
+        width: 280px;
+        height: 300px;
+    }
+
     .recherche {
-        width: 950px;
-        height: 75px;
-        background-color: red;
-        border-radius: 20px;
-        margin: auto;
-        margin-left: 400px;
+        display: block;
+        margin-left: 10%;
+        margin-top: 10%;
+        width: 80%;
+    }
+
+    .text-input {
+        width: 70%;
+    }
+
+    .bandeauMeteo {
+        max-width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .separateur {
+        display: none;
+    }
+
+    .temperature {
+        margin-left: 30%;
+        margin-right: 0px;
+    }
+
+    .icon-meteo {
+        margin-right: 0px;
+        margin-top: 20%;
+        margin-left: 25%;
+        width: 20%;
+        margin-bottom: -10%;
+    }
+
+    .localisation {
+        margin-left: 25%;
+        font-size: 250%;
+    }
+
+    .trois-bouttons {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin-top: 400Px;
     }
 }
