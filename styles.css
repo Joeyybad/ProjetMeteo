@@ -587,4 +587,7 @@ img {
         margin-top: 400Px;
         transition: all 500ms ease-in-out;
     }
+   .follow{
+    display: none;
+   }
 }
