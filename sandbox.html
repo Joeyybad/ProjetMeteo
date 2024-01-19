@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API Response</title>
+</head>
+<body>
+
+<h1>Weather in Paris</h1>
+<div>
+    <p><strong>City:</strong> <span id="city"></span></p>
+    <p><strong>Temperature (Celsius):</strong> <span id="temperature"></span></p>
+</div>
+
+<script>
+    // Fonction pour effectuer la requête HTTP et traiter la réponse
+    function fetchData() {
+        var apiUrl = "http://api.weatherapi.com/v1/current.json?key=1708858d94e946a2b6393534241901&q=phuket&aqi=no";
+
+        // Effectuer la requête avec fetch
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Extraire et afficher la ville et la température
+                var city = data.location.name;
+                var temperature = data.current.temp_c;
+
+                document.getElementById("city").textContent = city;
+                document.getElementById("temperature").textContent = temperature + " °C";
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des données:', error);
+            });
+    }
+
+    // Appeler la fonction au chargement de la page
+    window.onload = fetchData;
+</script>
+
+</body>
+</html>

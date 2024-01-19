@@ -7,7 +7,7 @@ body {
     /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
-    background: url('pexels-elia-clerici-912110.jpg');
+    background: url('https://e1.pxfuel.com/desktop-wallpaper/781/240/desktop-wallpaper-mountain-landscape-sunset-minimalist-minimalist-abstract-sunset.jpg');
     background-repeat: no-repeat;
     background-position: inherit;
     background-size: cover;
@@ -57,7 +57,7 @@ img {
 .recherche {
     width: 950px;
     height: 75px;
-    background-color: #ffffff9d;
+    background-color: #ffffff45;
     border-radius: 20px;
     margin: auto;
     margin-left: 150px;
@@ -123,7 +123,7 @@ img {
     height: 150px;
     width: 610px;
     border-radius: 20px;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
     margin-left: -650px;
     padding-left: 25px;
     padding-right: 25px;
@@ -173,7 +173,7 @@ img {
     height: 260px;
     width: 300px;
     border-radius: 20px;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
     margin-left: -650px;
     margin-top: 25px;
     padding-left: 25px;
@@ -208,7 +208,7 @@ img {
 .UV {
     height: 110px;
     border-radius: 20px;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
     margin-top: -260px;
     margin-left: -275px;
     padding-left: 25px;
@@ -238,7 +238,7 @@ img {
 .pression {
     height: 110px;
     border-radius: 20px;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
     margin-top: 40px;
     margin-left: -275px;
     padding-left: 25px;
@@ -268,7 +268,7 @@ img {
     height: 325px;
     width: 500px;
     border-radius: 20px;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
     padding-left: 25px;
     padding-right: 25px;
     position: absolute;
@@ -358,7 +358,7 @@ img {
     -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
     box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
     transition: 0.2s;
-    background-color: #ffffff9d;
+    background-color: #ffffffab;
 
 }
 
