@@ -504,9 +504,213 @@ img {
 }
 
 
-/** Responsive **/
+/************** Responsive ************** /
 
-@media screen and (max-width: 740px) {
+/** Transition bureau tablette mobile **/
+
+@media screen and (max-width: 1200px){
+    
+    .recherche {
+        display: block;
+        width: 100%;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .separateur{
+        display : none;
+        transition: all 500ms ease-in-out;
+    }
+
+    /* main{
+        max-width:100%;
+
+    } */
+    .temperature {
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        /* margin-left: 120px;
+        margin-right: -120px; */
+        text-shadow: 0px 6px 7px #050201;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .localisation {
+        color: white;
+        font-size: 50px;
+        text-shadow: 0px 6px 7px #050201;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        
+    }
+    
+    .icon-meteo {
+        width: 100px;
+        text-align: center;
+        /* margin-right: 125px;
+        margin-left: -125px; */
+        transition: all 500ms ease-in-out;
+    }
+
+    .intemperies {
+        height: 150px;
+        width: 450px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-left: -450px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+
+    }
+    .intemperies p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -10px;
+    }
+    
+    .intemperies i {
+        margin-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+    
+    .separateur-horizontal {
+        outline: none;
+        height: 1px;
+        border: none;
+        background-color: white;
+    }
+
+    .prevision {
+        height: 325px;
+        width: 375px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        padding-left: 25px;
+        padding-right: 25px;
+        position: absolute;
+        margin-left: 80px;
+        margin-top: -435px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+    .ventNuage {
+    height: 260px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-left: -450px;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.ventNuage p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -10px;
+}
+
+.ventNuage i {
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.info {
+    font-size: 17px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.UV {
+    width: 80px ;
+    height: 110px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: -260px;
+    margin-left: -100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.UV p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 20px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -50px;
+    margin-left: 35px;
+}
+
+.UV i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.pression {
+    height: 110px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: 40px;
+    margin-left: -120px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.pression p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -5px;
+}
+
+.pression i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+.info {
+    font-size: 13px;
+    text-shadow: 0px 6px 7px #050201;
+    transition: all 500ms ease-in-out;
+}
+    
+}
+@media screen and (max-width: 950px) {
 
     body {
         background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
@@ -540,7 +744,7 @@ img {
     .UV {
         margin-left: 0px;
         margin-top: 50px;
-        max-width: 80%;
+        width: 250px;
         transition: all 500ms ease-in-out;
     }
 
@@ -549,7 +753,8 @@ img {
         margin-left: 0px;
         margin-top: 50px;
         margin-bottom: 50px;
-        max-width: 80%;
+        /* max-width: 80%; */
+        width: 250px;
         transition: all 500ms ease-in-out;
     }
 
@@ -559,7 +764,7 @@ img {
         margin-top: 0px;
         max-width: 80%;
         width: 280px;
-        height: 300px;
+        height: 310px;
         transition: all 500ms ease-in-out;
     }
 
@@ -623,10 +828,3 @@ img {
    }
 }
 
-@media screen and (max-width: 1200px){
-    .separateur{
-        display : none;
-        transition: all 500ms ease-in-out;
-    }
-    
-}

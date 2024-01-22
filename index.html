@@ -44,14 +44,14 @@
 
     <main>
         <div class="infoBandeau">
-            <div class="intemperies">
+            <div class="intemperies" id="weatherAlert">
                 <div class="titre">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     <p>Intempérie</p>
                 </div>
                 <hr class="separateur-horizontal">
-                <div class="paragraphe-intemperies">Bonjour il y a une alerte avec bcp de neige snif le mec de pole
-                    emploi peut pas prendre sa voiture</div>
+
+            <div class="paragraphe-intemperies" id="weatherAlert"></div>    
             </div>
             <div class="ventNuage">
                 <div class="titre">
@@ -90,52 +90,63 @@
                 <hr class="separateur-horizontal-2">
                 <div class="progressbar-wrapper">
                     <div class="jour">Lundi</div>
+
                     <div class="logoTemps">
-                        <img src="images\2698240sun.png" class="imgPrev" alt="weatherLogo">
+                        <img src="images/2698240sun.png" class="imgPrev" alt="weatherLogo">
                     </div>
                     <div class="tempFaible"><span id="temp1">temp</span></div>
                     <div class="progressbar progressbarMonday" id="progressbar1"></div>
                     <div class="tempForte"><span id="temp2">temp</span></div>
+
+
                 </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mardi</div>
-                    <div class="logoTemps"><img src="images\2698240.png" class="imgPrev" alt="weatherLogo"></div>
+
+                    <div class="logoTemps"><img src="images/2698240.png" class="imgPrev" alt="weatherLogo"></div>
                     <div class="tempFaible"><span id="temp3">temp</span></div>
                     <div class="progressbar progressbarMonday" id="progressbar2"></div>
                     <div class="tempForte"><span id="temp4">temp</span></div>
-                </div>
+               </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mercredi</div>
-                    <div class="logoTemps"><img src="images\cloud-removebg-preview.png" class="imgPrev"
+
+                    <div class="logoTemps"><img src="images/cloud-removebg-preview.png" class="imgPrev"
                             alt="weatherLogo"></div>
                     <div class="tempFaible"><span id="temp5">temp</span></div>
                     <div class="progressbar progressbarTuesday" id="progressbar3"></div>
                     <div class="tempForte"><span id="temp6">temp</span></div>
+
                 </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Jeudi</div>
-                    <div class="logoTemps"><img src="images\2698240sun.png" class="imgPrev" alt="weatherLogo"></div>
+
+                    <div class="logoTemps"><img src="images/2698240sun.png" class="imgPrev" alt="weatherLogo"></div>
                     <div class="tempFaible"><span id="temp7">temp</span></div>
                     <div class="progressbar progressbarWednesday" id="progressbar4"></div>
                     <div class="tempForte"><span id="temp8">temp</span></div>
-                </div>
+                  </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Vendredi</div>
-                    <div class="logoTemps"><img src="images\2698240.png" class="imgPrev" alt=" weatherLogo"></div>
+
+                    <div class="logoTemps"><img src="images/2698240.png" class="imgPrev" alt=" weatherLogo"></div>
                     <div class="tempFaible"><span id="temp9">temp</span></div>
                     <div class="progressbar progressBarThursday" id="progressbar5"></div>
                     <div class="tempForte"><span id="temp10">temp</span></div>
+
                 </div>
                 <hr class="separateur3">
             </div>
             <div class="bouttons">
                 <!-- <button class="boutton"><i class="fa-regular fa-bookmark"></i></i></button>
+
                         <button class="boutton"><i class="fa-solid fa-mountain"></i></button> -->
                 <a href="favorite.html"><button class="boutton"><i class="fa-regular fa-bookmark"></i></button></i></a>
+
             </div>
         </div>
         <br>
@@ -182,8 +193,11 @@ function updateBodyBackground(temperature) {
 }
         // Fonction pour effectuer la requête HTTP et traiter la réponse
         function fetchData(city) {
+
             var apiKey = "1708858d94e946a2b6393534241901";
             var apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
+
 
             // Effectuer la requête avec fetch
             fetch(apiUrl)
@@ -208,6 +222,33 @@ function updateBodyBackground(temperature) {
                     document.getElementById("UV").textContent = uv;
                     document.getElementById("pression").textContent = pression + "hPa";
 
+
+
+                    // Vérifier s'il y a des alertes météo
+                    var alerts = data.alerts;
+                    if (alerts && alerts.length > 0) {
+                        // Mettre à jour le contenu de la classe "paragraphe-intemperies" avec les alertes
+                        var alertText = "";
+                        alerts.forEach(alert => {
+                            alertText += `${alert.event}: ${alert.description}\n`;
+                        });
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = alertText;
+                    } else {
+                        // Aucune alerte météo
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = "Aucune alerte météo.";
+                    }
+                    
+                    // Modifier la fonction fetchData pour appeler fetchWeatherAlerts et mettre à jour les alertes météo
+                    function fetchData(city) {
+                        // ...
+
+                        // Appeler fetchWeatherAlerts avec le nom de la ville
+                        fetchWeatherAlerts(city);
+
+                        // ...
+                    }
+
+
                     // Changer l'image en fonction du niveau de nuage
                     var weatherIcon = document.getElementById("weatherIcon");
 
@@ -226,15 +267,18 @@ function updateBodyBackground(temperature) {
                             break;
                     }
 
+
                     updateBodyBackground(temperature)
 
                     // Call function to get future weather data
                     getFutureWeather(city);
+
                 })
                 .catch(error => {
                     console.error('Erreur lors de la récupération des données:', error);
                 });
         }
+
 
         // Fonction pour obtenir la localisation par défaut
         function getDefaultLocation() {
@@ -317,9 +361,26 @@ function updateBodyBackground(temperature) {
             fetchData(city);
         });
 
+
+        // Fonction pour obtenir la localisation par défaut
+        function getDefaultLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // Appeler fetchData avec les coordonnées de la localisation par défaut
+                    fetchData(position.coords.latitude + ',' + position.coords.longitude);
+                });
+            } else {
+                // Si la géolocalisation n'est pas prise en charge, appeler fetchData avec une ville par défaut (paris)
+                fetchData('Le_mans');
+            }
+        }
+
+
         // Appeler la fonction au chargement de la page pour obtenir la localisation par défaut
         window.onload = getDefaultLocation;
+
     </script>
+
 
 
 
