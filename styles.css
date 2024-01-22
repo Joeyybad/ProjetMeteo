@@ -599,3 +599,11 @@ img {
     display: none;
    }
 }
+
+@media screen and (max-width: 1200px){
+    .separateur{
+        display : none;
+        transition: all 500ms ease-in-out;
+    }
+    
+}
