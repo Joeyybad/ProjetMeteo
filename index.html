@@ -24,7 +24,7 @@
                 <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput">
             </div>
         </form>
-        
+
 
 
 
@@ -36,21 +36,21 @@
         <div class="localisation" id="city"></div>
         <span class="separateur"></span>
         <div class="temps">
-            <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo" id="weatherIcon">
+            <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
+                id="weatherIcon">
         </div>
     </div>
 
 
     <main>
         <div class="infoBandeau">
-            <div class="intemperies">
+            <div class="intemperies" id="weatherAlert">
                 <div class="titre">
                     <i class="fa-solid fa-triangle-exclamation"></i>
                     <p>Intempérie</p>
                 </div>
                 <hr class="separateur-horizontal">
-                <div class="paragraphe-intemperies">Bonjour il y a une alerte avec bcp de neige snif le mec de pole
-                    emploi peut pas prendre sa voiture</div>
+                <div class="paragraphe-intemperies" id="weatherAlert"></div>
             </div>
             <div class="ventNuage">
                 <div class="titre">
@@ -67,13 +67,15 @@
                 <div class="info">Orientation : <span id="orientation"></span></div>
             </div>
             <div class="UV">
-                    <i class="fa-regular fa-sun"></i><p>UV</p>
+                <i class="fa-regular fa-sun"></i>
+                <p>UV</p>
                 <hr class="separateur-horizontal-2">
                 <div class="info">Indice UV : <span id="UV"></span></div>
             </div>
             <div class="pression">
                 <div class="titre">
-                    <i class="fa-solid fa-wind"></i><p>Pression</p>
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Pression</p>
                 </div>
                 <hr class="separateur-horizontal-2">
                 <div class="info">Indice de pression : <span id="pression"></span></div>
@@ -87,15 +89,15 @@
                 <hr class="separateur-horizontal-2">
                 <div class="progressbar-wrapper">
                     <div class="jour">Lundi</div>
-                    <div class="logoTemps"><img src="images\2698240sun.png" class="imgPrev" alt="weatherLogo" ></div>
+                    <div class="logoTemps"><img src="images\2698240sun.png" class="imgPrev" alt="weatherLogo"></div>
                     <div class="tempFaible">-1°</div>
                     <div class="progressbar progressbarMonday"></div>
-                    <div class="tempForte">3°</div> 
+                    <div class="tempForte">3°</div>
                 </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mardi</div>
-                    <div class="logoTemps"><img src="images\2698240.png" class="imgPrev" alt="weatherLogo" ></div>
+                    <div class="logoTemps"><img src="images\2698240.png" class="imgPrev" alt="weatherLogo"></div>
                     <div class="tempFaible">3°</div>
                     <div class="progressbar progressbarMonday"></div>
                     <div class="tempForte">10°</div>
@@ -103,7 +105,8 @@
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mercredi</div>
-                    <div class="logoTemps"><img src="images\cloud-removebg-preview.png" class="imgPrev" alt="weatherLogo"></div>
+                    <div class="logoTemps"><img src="images\cloud-removebg-preview.png" class="imgPrev"
+                            alt="weatherLogo"></div>
                     <div class="tempFaible">9°</div>
                     <div class="progressbar progressbarTuesday"></div>
                     <div class="tempForte">17°</div>
@@ -133,15 +136,16 @@
             </div>
         </div>
         <br>
-    <div class="follow">
-            <i class="fa-solid fa-hashtag"></i><p>Suivez-nous !</p>
-        <hr class="separateur-horizontal-3">
-        <div class ="logo2">
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
+        <div class="follow">
+            <i class="fa-solid fa-hashtag"></i>
+            <p>Suivez-nous !</p>
+            <hr class="separateur-horizontal-3">
+            <div class="logo2">
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
         </div>
-      </div> 
     </main>
 
 
@@ -156,8 +160,8 @@
     <script>
         // Fonction pour effectuer la requête HTTP et traiter la réponse
         function fetchData(city) {
-            var apiUrl = "http://api.weatherapi.com/v1/current.json?key=1708858d94e946a2b6393534241901&q=" + city + "&aqi=no";
-    
+            var apiUrl = "http://api.weatherapi.com/v1/current.json?key=1708858d94e946a2b6393534241901&q=" + city + "&aqi=no&alerts=yes";
+
             // Effectuer la requête avec fetch
             fetch(apiUrl)
                 .then(response => response.json())
@@ -171,7 +175,7 @@
                     var orientation = data.current.wind_dir;
                     var uv = data.current.uv;
                     var pression = data.current.pressure_mb;
-    
+
                     document.getElementById("city").textContent = city;
                     document.getElementById("temperature").textContent = temperature + " °C";
                     document.getElementById("cloud").textContent = cloud;
@@ -180,10 +184,34 @@
                     document.getElementById("orientation").textContent = orientation;
                     document.getElementById("UV").textContent = uv;
                     document.getElementById("pression").textContent = pression + "hPa";
-    
+
+                    // Vérifier s'il y a des alertes météo
+                    var alerts = data.alerts;
+                    if (alerts && alerts.length > 0) {
+                        // Mettre à jour le contenu de la classe "paragraphe-intemperies" avec les alertes
+                        var alertText = "";
+                        alerts.forEach(alert => {
+                            alertText += `${alert.event}: ${alert.description}\n`;
+                        });
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = alertText;
+                    } else {
+                        // Aucune alerte météo
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = "Aucune alerte météo.";
+                    }
+                    
+                    // Modifier la fonction fetchData pour appeler fetchWeatherAlerts et mettre à jour les alertes météo
+                    function fetchData(city) {
+                        // ...
+
+                        // Appeler fetchWeatherAlerts avec le nom de la ville
+                        fetchWeatherAlerts(city);
+
+                        // ...
+                    }
+
                     // Changer l'image en fonction du niveau de nuage
                     var weatherIcon = document.getElementById("weatherIcon");
-    
+
                     switch (true) {
                         case (cloud >= 0 && cloud <= 25):
                             weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/2698/2698240.png";
@@ -201,25 +229,26 @@
                             weatherIcon.src = "https://example.com/default-image.png";
                             break;
                     }
+
                 })
                 .catch(error => {
                     console.error('Erreur lors de la récupération des données:', error);
                 });
         }
-    
+
         // Gestionnaire d'événements pour la soumission du formulaire
         document.getElementById('searchForm').addEventListener('submit', function (event) {
             // Empêcher le formulaire de se soumettre normalement
             event.preventDefault();
-    
+
             // Récupérer la valeur de la ville à partir de l'input
             var cityInput = document.getElementById('cityInput');
             var city = cityInput.value;
-    
+
             // Appeler fetchData avec le nom de la ville
             fetchData(city);
         });
-    
+
         // Fonction pour obtenir la localisation par défaut
         function getDefaultLocation() {
             if (navigator.geolocation) {
@@ -232,12 +261,13 @@
                 fetchData('Le_mans');
             }
         }
-    
+
         // Appeler la fonction au chargement de la page pour obtenir la localisation par défaut
         window.onload = getDefaultLocation;
+
     </script>
-    
-    
+
+
 </body>
 
 </html>
