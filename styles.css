@@ -7,7 +7,7 @@ body {
     /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
-    background: url('https://e1.pxfuel.com/desktop-wallpaper/781/240/desktop-wallpaper-mountain-landscape-sunset-minimalist-minimalist-abstract-sunset.jpg');
+    background: url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg');
     background-repeat: no-repeat;
     background-position: inherit;
     background-size: cover;
@@ -203,6 +203,7 @@ img {
 .info {
     font-size: 17px;
     text-shadow: 0px 6px 7px #050201;
+    color: black;
 }
 
 .UV {
@@ -435,25 +436,47 @@ img {
 
 }
 
-.progressbarMonday {
-    background: rgb(32, 250, 240);
-    background: linear-gradient(90deg, rgba(32, 250, 240, 0.9417016806722689) 0%, rgba(7, 177, 64, 1) 46%, rgba(254, 255, 0, 1) 100%);
-}
-
-.progressbarTuesday {
-    background: rgb(238, 250, 32);
-    background: linear-gradient(90deg, rgba(238, 250, 32, 0.9417016806722689) 0%, rgba(227, 152, 22, 1) 46%, rgba(255, 42, 0, 1) 100%);
-}
-
-.progressbarWednesday {
+.progressbar1 {
     background: rgb(9, 9, 121);
     background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);  
 }
 
-.progressbarThursday {
-    background: rgb(2, 31, 93);
-    background: linear-gradient(90deg, rgba(2, 31, 93, 0.9417016806722689) 0%, rgba(0, 122, 190, 1) 46%, rgba(128, 208, 252, 1) 100%);
+.progressbar2 {
+    background: rgb(32, 119, 250);
+    background: linear-gradient(90deg, rgba(32, 50, 250, 0.942) 0%, rgb(7, 101, 177) 46%, rgb(0, 145, 255) 100%);
 }
+
+.progressbar3 {
+    background: rgb(32, 250, 240);
+    background: linear-gradient(90deg, rgba(32, 250, 240, 0.9417016806722689) 0%, rgb(7, 177, 149) 46%, rgb(0, 255, 174) 100%);
+}
+
+.progressbar4 {
+    background: rgb(32, 250, 116);
+    background: linear-gradient(90deg, rgba(32, 250, 163, 0.942) 0%, rgb(7, 177, 81) 46%, rgb(115, 255, 0) 100%);
+}
+
+.progressbar5 {
+    background: rgb(65, 250, 32);
+    background: linear-gradient(90deg, rgba(32, 250, 43, 0.942) 0%, rgb(183, 255, 0) 46%, rgb(217, 255, 0) 100%);
+}
+
+.progressbar6 {
+    background: rgb(238, 250, 32);
+    background: linear-gradient(90deg, rgba(238, 250, 32, 0.9417016806722689) 0%, rgba(227, 152, 22, 1) 46%, rgb(255, 162, 0) 100%);
+}
+
+.progressbar7 {
+    background: rgb(250, 166, 32);
+    background: linear-gradient(90deg, rgba(250, 203, 32, 0.942) 0%, rgb(227, 121, 22) 46%, rgb(255, 102, 0) 100%);
+}
+
+.progressbar8 {
+    background: rgb(250, 32, 32);
+    background: linear-gradient(90deg, rgba(255, 128, 0, 0.942) 0%, rgb(227, 66, 22) 46%, rgb(255, 0, 0) 100%);
+}
+
+
 
 
 .tempForte {
