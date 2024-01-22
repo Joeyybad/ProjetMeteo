@@ -521,6 +521,12 @@ img {
         width: 100%;
         transition: all 500ms ease-in-out;
     }
+  .SearchLogo{
+    font-display: block;
+    transition: all 500ms ease-in-out;
+    margin-left: 40px;
+
+  }
     
     .separateur{
         display : none;
