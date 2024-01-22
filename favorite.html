@@ -95,21 +95,10 @@
                     var city = data.location.name;
                     var temperature = data.current.temp_c;
                     var cloud = data.current.cloud;
-                    var speed = data.current.wind_kph;
-                    var direction = data.current.wind_degree;
-                    var orientation = data.current.wind_dir;
-                    var uv = data.current.uv;
-                    var pression = data.current.pressure_mb;
-    
+                
                     document.getElementById("city").textContent = city;
                     document.getElementById("temperature").textContent = temperature + " °C";
                     document.getElementById("cloud").textContent = cloud;
-                    document.getElementById("speed").textContent = speed + " Km/h";
-                    document.getElementById("direction").textContent = direction + "°";
-                    document.getElementById("orientation").textContent = orientation;
-                    document.getElementById("UV").textContent = uv;
-                    document.getElementById("pression").textContent = pression + "hPa";
-    
                     // Changer l'image en fonction du niveau de nuage
                     var weatherIcon = document.getElementById("weatherIcon");
 
