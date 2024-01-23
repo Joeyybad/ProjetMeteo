@@ -7,7 +7,7 @@ body {
     /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
-    background: url('https://e1.pxfuel.com/desktop-wallpaper/781/240/desktop-wallpaper-mountain-landscape-sunset-minimalist-minimalist-abstract-sunset.jpg');
+    background: url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg');
     background-repeat: no-repeat;
     background-position: inherit;
     background-size: cover;
@@ -40,7 +40,6 @@ footer {
 
 }
 
-
 /*********header********/
 
 header {
@@ -66,7 +65,7 @@ img {
 }
 
 .text-input {
-    width: 95%;
+    width: 100%;
     height: 100%;
     border: none;
     outline: none;
@@ -75,7 +74,14 @@ img {
     color: white;
     font-size: 25px;
     font-family: "Poppins", sans-serif;
-    margin-left: 25px;
+    margin-left: 60px;
+}
+.SearchLogo{
+    margin-left: 170px;
+    margin-top: -50px;
+    position: absolute;
+    color:rgba(255, 255, 255, 0.4)
+   
 }
 
 /** Partie Bandeau météo **/
@@ -209,6 +215,7 @@ img {
 .info {
     font-size: 17px;
     text-shadow: 0px 6px 7px #050201;
+    color: black;
 }
 
 .UV {
@@ -441,25 +448,47 @@ img {
 
 }
 
-.progressbarMonday {
-    background: rgb(32, 250, 240);
-    background: linear-gradient(90deg, rgba(32, 250, 240, 0.9417016806722689) 0%, rgba(7, 177, 64, 1) 46%, rgba(254, 255, 0, 1) 100%);
-}
-
-.progressbarTuesday {
-    background: rgb(238, 250, 32);
-    background: linear-gradient(90deg, rgba(238, 250, 32, 0.9417016806722689) 0%, rgba(227, 152, 22, 1) 46%, rgba(255, 42, 0, 1) 100%);
-}
-
-.progressbarWednesday {
+.progressbar1 {
     background: rgb(9, 9, 121);
     background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);  
 }
 
-.progressbarThursday {
-    background: rgb(2, 31, 93);
-    background: linear-gradient(90deg, rgba(2, 31, 93, 0.9417016806722689) 0%, rgba(0, 122, 190, 1) 46%, rgba(128, 208, 252, 1) 100%);
+.progressbar2 {
+    background: rgb(32, 119, 250);
+    background: linear-gradient(90deg, rgba(32, 50, 250, 0.942) 0%, rgb(7, 101, 177) 46%, rgb(0, 145, 255) 100%);
 }
+
+.progressbar3 {
+    background: rgb(32, 250, 240);
+    background: linear-gradient(90deg, rgba(32, 250, 240, 0.9417016806722689) 0%, rgb(7, 177, 149) 46%, rgb(0, 255, 174) 100%);
+}
+
+.progressbar4 {
+    background: rgb(32, 250, 116);
+    background: linear-gradient(90deg, rgba(32, 250, 163, 0.942) 0%, rgb(7, 177, 81) 46%, rgb(115, 255, 0) 100%);
+}
+
+.progressbar5 {
+    background: rgb(65, 250, 32);
+    background: linear-gradient(90deg, rgba(32, 250, 43, 0.942) 0%, rgb(183, 255, 0) 46%, rgb(217, 255, 0) 100%);
+}
+
+.progressbar6 {
+    background: rgb(238, 250, 32);
+    background: linear-gradient(90deg, rgba(238, 250, 32, 0.9417016806722689) 0%, rgba(227, 152, 22, 1) 46%, rgb(255, 162, 0) 100%);
+}
+
+.progressbar7 {
+    background: rgb(250, 166, 32);
+    background: linear-gradient(90deg, rgba(250, 203, 32, 0.942) 0%, rgb(227, 121, 22) 46%, rgb(255, 102, 0) 100%);
+}
+
+.progressbar8 {
+    background: rgb(250, 32, 32);
+    background: linear-gradient(90deg, rgba(255, 128, 0, 0.942) 0%, rgb(227, 66, 22) 46%, rgb(255, 0, 0) 100%);
+}
+
+
 
 
 .tempForte {
@@ -487,9 +516,219 @@ img {
 }
 
 
-/** Responsive **/
+/************** Responsive ************** /
 
-@media screen and (max-width: 740px) {
+/** Transition bureau tablette mobile **/
+
+@media screen and (max-width: 1200px){
+    
+    .recherche {
+        display: block;
+        width: 100%;
+        transition: all 500ms ease-in-out;
+    }
+  .SearchLogo{
+    font-display: block;
+    transition: all 500ms ease-in-out;
+    margin-left: 40px;
+
+  }
+    
+    .separateur{
+        display : none;
+        transition: all 500ms ease-in-out;
+    }
+
+    /* main{
+        max-width:100%;
+
+    } */
+    .temperature {
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        /* margin-left: 120px;
+        margin-right: -120px; */
+        text-shadow: 0px 6px 7px #050201;
+        transition: all 500ms ease-in-out;
+    }
+    
+    .localisation {
+        color: white;
+        font-size: 50px;
+        text-shadow: 0px 6px 7px #050201;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        
+    }
+    
+    .icon-meteo {
+        width: 100px;
+        text-align: center;
+        /* margin-right: 125px;
+        margin-left: -125px; */
+        transition: all 500ms ease-in-out;
+    }
+
+    .intemperies {
+        height: 150px;
+        width: 450px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-left: -450px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+
+    }
+    .intemperies p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -10px;
+    }
+    
+    .intemperies i {
+        margin-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+    
+    .separateur-horizontal {
+        outline: none;
+        height: 1px;
+        border: none;
+        background-color: white;
+    }
+
+    .prevision {
+        height: 325px;
+        width: 375px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        padding-left: 25px;
+        padding-right: 25px;
+        position: absolute;
+        margin-left: 80px;
+        margin-top: -435px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+    .ventNuage {
+    height: 260px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-left: -450px;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.ventNuage p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -10px;
+}
+
+.ventNuage i {
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.info {
+    font-size: 17px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.UV {
+    width: 80px ;
+    height: 110px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: -260px;
+    margin-left: -100px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.UV p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 20px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -50px;
+    margin-left: 35px;
+}
+
+.UV i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.pression {
+    height: 110px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: 40px;
+    margin-left: -120px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    transition: all 500ms ease-in-out;
+}
+
+.pression p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -5px;
+}
+
+.pression i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+.info {
+    font-size: 13px;
+    text-shadow: 0px 6px 7px #050201;
+    transition: all 500ms ease-in-out;
+}
+    
+}
+@media screen and (max-width: 950px) {
 
     body {
         background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
@@ -523,7 +762,7 @@ img {
     .UV {
         margin-left: 0px;
         margin-top: 50px;
-        max-width: 80%;
+        width: 250px;
         transition: all 500ms ease-in-out;
     }
 
@@ -532,7 +771,8 @@ img {
         margin-left: 0px;
         margin-top: 50px;
         margin-bottom: 50px;
-        max-width: 80%;
+        /* max-width: 80%; */
+        width: 250px;
         transition: all 500ms ease-in-out;
     }
 
@@ -542,7 +782,7 @@ img {
         margin-top: 0px;
         max-width: 80%;
         width: 280px;
-        height: 300px;
+        height: 310px;
         transition: all 500ms ease-in-out;
     }
 
@@ -605,12 +845,18 @@ img {
 
     .bouttons {
         display: flex;
-        justify-content: flex-end;
+        justify-content:space-between;
         width: 95%;
         margin-top: 400Px;
         transition: all 500ms ease-in-out;
+        margin-bottom: 10px;
+    }
+    .boutton > img {
+   
+        width: 50px;
     }
    .follow{
     display: none;
    }
 }
+
