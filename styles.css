@@ -102,10 +102,10 @@ img {
 
 .temperature {
     color: white;
-    font-size: 85px;
+    font-size: 70px;
     text-align: center;
-    margin-left: 150px;
-    margin-right: -150px;
+    margin-left: 50px;
+    margin-right: -50px;
     text-shadow: 0px 6px 7px #050201;
 }
 
@@ -115,10 +115,16 @@ img {
     text-shadow: 0px 6px 7px #050201;
 }
 
+.heure{
+    color: white;
+    font-size: 70px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
 .icon-meteo {
     width: 100px;
-    margin-right: 125px;
-    margin-left: -125px;
+    margin-right: 50px;
+    margin-left: -50px;
 }
 
 /** Fin de la Partie Bandeau météo **/

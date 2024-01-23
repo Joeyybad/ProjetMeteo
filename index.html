@@ -11,7 +11,7 @@
         href="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&">
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>MaMétéo</title>
+    <title>InstaMétéo</title>
 </head>
 
 <body>
@@ -38,14 +38,20 @@
         <span class="separateur"></span>
         <div class="localisation" id="city"></div>
         <span class="separateur"></span>
+        <div class="heure" id="heure"></div>
+        <span class="separateur"></span>
         <div class="temps">
             <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
                 id="weatherIcon">
         </div>
     </div>
 
+    </div>
+
 
     <main>
+        <br>
+        <br>
         <div class="infoBandeau">
             <div class="intemperies" id="weatherAlert">
                 <div class="titre">
@@ -226,6 +232,16 @@ function updateBodyBackground(temperature) {
                     document.getElementById("pression").textContent = pression + "hPa";
 
 
+                    // Ajouter la récupération de l'heure actuelle
+                    var localTime = new Date(data.location.localtime);
+            var options = { hour12: false, hour: 'numeric', minute: 'numeric' };
+            var formattedTime = localTime.toLocaleTimeString(undefined, options);
+
+            // Mettre à jour l'élément HTML avec l'heure
+            document.getElementById("heure").textContent = formattedTime;
+
+
+
 
                     // Vérifier s'il y a des alertes météo
                     var alerts = data.alerts;
@@ -240,7 +256,7 @@ function updateBodyBackground(temperature) {
                         // Aucune alerte météo
                         document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = "Aucune alerte météo.";
                     }
-                    
+
                     // Modifier la fonction fetchData pour appeler fetchWeatherAlerts et mettre à jour les alertes météo
                     function fetchData(city) {
                         // ...
