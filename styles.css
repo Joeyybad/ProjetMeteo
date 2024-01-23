@@ -818,10 +818,15 @@ img {
 
     .bouttons {
         display: flex;
-        justify-content: flex-end;
+        justify-content:space-between;
         width: 95%;
         margin-top: 400Px;
         transition: all 500ms ease-in-out;
+        margin-bottom: 10px;
+    }
+    .boutton > img {
+   
+        width: 50px;
     }
    .follow{
     display: none;
