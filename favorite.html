@@ -21,11 +21,16 @@
                 src="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&"
                 alt="logo InstaMeteo"></a>
         <span class="titre-logo">InstaMétéo</span>
+
         <form id="searchForm" action="#">
+
             <div class="recherche">
                 <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput">
                 <button type="button" onclick="searchAndAddToFavorites()" class="button"><i
                         class="fa-solid fa-heart-circle-plus" style="color: #ffffff;"></i></i></button>
+            </div>
+            <div class="SearchLogo">
+                <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
             </div>
         </form>
     </header>
@@ -42,6 +47,7 @@
     </div>
 
     <main>
+
         <div class="ville" id="favoriteCity1">
             <!-- Contenu de la première ville favorite -->
         </div>
@@ -50,6 +56,7 @@
         </div>
         <div class="ville" id="favoriteCity3">
             <!-- Contenu de la troisième ville favorite -->
+
         </div>
     </main>
 
@@ -61,6 +68,7 @@
             
 
             // Effectuer la requête avec fetch
+
             return fetch(apiUrl)
                 .then(response => response.json());
         }
@@ -180,6 +188,39 @@ function searchCity() {
                 // Mettre à jour l'icône dans le bandeau météo
                 var weatherIcon = document.getElementById("weatherIcon");
                 updateWeatherIcon(weatherIcon, cloud);
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Extraire et afficher les données météorologiques
+                    var city = data.location.name;
+                    var temperature = data.current.temp_c;
+                    var cloud = data.current.cloud;
+                
+                    document.getElementById("city").textContent = city;
+                    document.getElementById("temperature").textContent = temperature + " °C";
+                    document.getElementById("cloud").textContent = cloud;
+                    // Changer l'image en fonction du niveau de nuage
+                    var weatherIcon = document.getElementById("weatherIcon");
+
+                switch (true) {
+                    case (cloud >= 0 && cloud <= 25):
+                        weatherIcon.src = "images/2698240sun.png";
+                        break;
+                    case (cloud > 25 && cloud <= 50):
+                        weatherIcon.src = "images/2698240.png";
+                        break;
+                    case (cloud > 50 && cloud <= 100):
+                        // Add your image URL for the cloud range 100 to 200
+                        weatherIcon.src = "imagescloud-removebg-preview.png";
+                        break;
+                    // Add more cases as needed
+                    default:
+                        // Default image if none of the cases match
+                        weatherIcon.src = "https://example.com/default-image.png";
+                        break;
+                }
+
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des données:', error);
