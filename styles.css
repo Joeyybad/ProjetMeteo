@@ -61,7 +61,7 @@ img {
     box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
 }
 
-.text-input {
+.text-input2 {
     width: 100%;
     height: 100%;
     border: none;
@@ -116,6 +116,11 @@ transform: scale(1.2);
     display: flex;
     justify-content: space-between;
     
+}
+
+.bandeauMeteo2 {
+    display: flex;
+    justify-content: space-between;
 }
 
 .separateur {
@@ -779,6 +784,7 @@ transform: scale(1.2);
 
     }
 
+
     img {
         width: 150px;
         transition: all 500ms ease-in-out;
@@ -831,10 +837,13 @@ transform: scale(1.2);
         width: 80%;
         transition: all 500ms ease-in-out;
     }
+    .SearchLogo{
+         display: none;
 
-    .text-input {
-        width: 70%;
+    .text-input2 {
+        max-width: 50%;
         transition: all 500ms ease-in-out;
+        margin-left: 0px;
     }
 
     .bandeauMeteo {
@@ -846,15 +855,26 @@ transform: scale(1.2);
         transition: all 500ms ease-in-out;
     }
 
-    .separateur {
+    .bandeauMeteo2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        width: 50%;
+    }
+
+    .separateur5 {
         display: none;
         transition: all 500ms ease-in-out;
     }
 
-    .temperature {
+    .temperature2 {
         margin-left: 30%;
         margin-right: 0px;
         transition: all 500ms ease-in-out;
+        margin-top: 50px;
     }
 
     .heure {
@@ -866,16 +886,15 @@ transform: scale(1.2);
         margin-left: 25%;
     }
 
-    .icon-meteo {
+    .icon-meteo2 {
         margin-right: 0px;
-        margin-top: 20%;
         margin-left: 25%;
         width: 20%;
         margin-bottom: -10%;
         transition: all 500ms ease-in-out;
     }
 
-    .localisation {
+    .localisation2 {
         margin-left: 25%;
         font-size: 250%;
         transition: all 500ms ease-in-out;
@@ -899,3 +918,4 @@ transform: scale(1.2);
         display: none;
     }
 }
+
