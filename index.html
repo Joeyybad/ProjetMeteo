@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -7,40 +7,395 @@
     <meta name="description"
         content="Découvrez l'appplication de prévisions météo de référence pour votre smartphone,votre tablette et bureau">
     <link rel="stylesheet" href="styles.css">
-    <script src="js\script.js"></script>
-    <title>Document</title>
+    <link rel="icon"
+        href="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>MaMétéo</title>
 </head>
 
 <body>
-<header>
+    <header>
+        <img src="https://cdn.discordapp.com/attachments/1197302909566726144/1197460083798454362/cloud-cloudy-day-forecast-sun-icon.png?ex=65bb589b&is=65a8e39b&hm=a667e0cb09c58785cad287aa059cde92fbfcc60a11f419bc3228df5c8e0e6a86&"
+            alt="logo InstaMeteo">
+        <span class="titre-logo">InstaMétéo</span>
+        <form id="searchForm" action="#">
+            <div class="recherche">
+                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput" spellcheck="false" autocomplete="off" >
+            </div>
+            <div class="SearchLogo">
+                <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+            </div>
+        </form>
+        <div class="links-container">
+            <div class="favorite-link">
+                <a href="favorite.html">Favoris</a>
+            </div>
+            <div class="graph-link">
+                <a href="#">Prévisions</a>
+            </div>
+    </header>
 
-
-
-
-</header>
-
+    <br>
+    <div class="bandeauMeteo">
+        <div class="temperature" id="temperature"></div>
+        <span class="separateur"></span>
+        <div class="localisation" id="city"></div>
+        <span class="separateur"></span>
+        <div class="temps">
+            <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
+                id="weatherIcon">
+        </div>
+    </div>
 
 
     <main>
-        <div id="ww_3f9894b8b9ca6" v='1.3' loc='id' a='{"t":"horizontal","lang":"fr","sl_lpl":1,"ids":["wl863"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#0288D1","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>Plus de prévisions: 
-            <a href="https://oneweather.org/fr/paris/30_jours/" id="ww_3f9894b8b9ca6_u" target="_blank">Météo paris 30 jours</a>
+        <div class="infoBandeau">
+            <div class="intemperies" id="weatherAlert">
+                <div class="titre">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>Intempérie</p>
+                </div>
+                <hr class="separateur-horizontal">
+
+                <div class="paragraphe-intemperies" id="weatherAlert"></div>
+            </div>
+            <div class="ventNuage">
+                <div class="titre">
+                    <i class="fa-solid fa-cloud"></i>
+                    <p>Vent/Nuages</p>
+                </div>
+                <hr class="separateur-horizontal-2">
+                <div class="info">Intensité Nuageuse : <span id="cloud"></span></div>
+                <br>
+                <div class="info">Vitesse : <span id="speed"></span></div>
+                <br>
+                <div class="info">Direction : <span id="direction"></span></div>
+                <br>
+                <div class="info">Orientation : <span id="orientation"></span></div>
+            </div>
+            <div class="UV">
+                <i class="fa-regular fa-sun"></i>
+                <p>UV</p>
+                <hr class="separateur-horizontal-2">
+                <div class="info">Indice UV : <span id="UV"></span></div>
+            </div>
+            <div class="pression">
+                <div class="titre">
+                    <i class="fa-solid fa-wind"></i>
+                    <p>Pression</p>
+                </div>
+                <hr class="separateur-horizontal-2">
+                <div class="info">Indice de pression : <span id="pression"></span></div>
+            </div>
+
+            <div class="prevision">
+                <div class="titre">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <p>Prevision</p>
+                </div>
+                <hr class="separateur-horizontal-2">
+                <div class="progressbar-wrapper">
+                    <div class="jour">Lundi</div>
+
+                    <div class="logoTemps">
+                        <img src="images/2698240sun.png" class="imgPrev" alt="weatherLogo">
+                    </div>
+                    <div class="tempFaible"><span id="temp1">temp</span></div>
+                    <div class="progressbar progressbarMonday" id="progressbar1"></div>
+                    <div class="tempForte"><span id="temp2">temp</span></div>
+
+
+                </div>
+                <hr class="separateur3">
+                <div class="progressbar-wrapper">
+                    <div class="jour">Mardi</div>
+
+                    <div class="logoTemps"><img src="images/2698240.png" class="imgPrev" alt="weatherLogo"></div>
+                    <div class="tempFaible"><span id="temp3">temp</span></div>
+                    <div class="progressbar progressbarMonday" id="progressbar2"></div>
+                    <div class="tempForte"><span id="temp4">temp</span></div>
+                </div>
+                <hr class="separateur3">
+                <div class="progressbar-wrapper">
+                    <div class="jour">Mercredi</div>
+
+                    <div class="logoTemps"><img src="images/cloud-removebg-preview.png" class="imgPrev"
+                            alt="weatherLogo"></div>
+                    <div class="tempFaible"><span id="temp5">temp</span></div>
+                    <div class="progressbar progressbarTuesday" id="progressbar3"></div>
+                    <div class="tempForte"><span id="temp6">temp</span></div>
+
+                </div>
+                <hr class="separateur3">
+                <div class="progressbar-wrapper">
+                    <div class="jour">Jeudi</div>
+
+                    <div class="logoTemps"><img src="images/2698240sun.png" class="imgPrev" alt="weatherLogo"></div>
+                    <div class="tempFaible"><span id="temp7">temp</span></div>
+                    <div class="progressbar progressbarWednesday" id="progressbar4"></div>
+                    <div class="tempForte"><span id="temp8">temp</span></div>
+                </div>
+                <hr class="separateur3">
+                <div class="progressbar-wrapper">
+                    <div class="jour">Vendredi</div>
+
+                    <div class="logoTemps"><img src="images/2698240.png" class="imgPrev" alt=" weatherLogo"></div>
+                    <div class="tempFaible"><span id="temp9">temp</span></div>
+                    <div class="progressbar progressBarThursday" id="progressbar5"></div>
+                    <div class="tempForte"><span id="temp10">temp</span></div>
+
+                </div>
+                <hr class="separateur3">
+            </div>
+            <div class="bouttons">
+                <!-- <button class="boutton"><i class="fa-regular fa-bookmark"></i></i></button>
+
+                        <button class="boutton"><i class="fa-solid fa-mountain"></i></button> -->
+                <a href="favorite.html"><button class="boutton"><i class="fa-regular fa-bookmark"></i></button></i></a>
+
+            </div>
         </div>
-        <script async src="https://app2.weatherwidget.org/js/?id=ww_3f9894b8b9ca6"></script>
-
-
+        <br>
+        <div class="follow">
+            <i class="fa-solid fa-hashtag"></i>
+            <p>Suivez-nous !</p>
+            <hr class="separateur-horizontal-3">
+            <div class="logo2">
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
     </main>
 
+    <script>
+
+        function updateBodyBackground(temperature) {
+            var body = document.body;
+
+            if (temperature >= -50 && temperature < 0) {
+                body.style.background = "url('https://papers.co/wallpaper/papers.co-oa50-snow-sky-winter-cold-sun-nature-35-3840x2160-4k-wallpaper.jpg')";
+            } else if (temperature >= 0 && temperature < 12) {
+                body.style.background = "url('https://www.shutterstock.com/image-photo/aerial-view-on-frozen-seawater-600nw-1924605944.jpg')";
+            } else if (temperature >= 12 && temperature < 25) {
+                body.style.background = "url('https://t4.ftcdn.net/jpg/03/68/60/21/360_F_368602106_QgaRuFg7Fxa6W0bu5ZWcokXXinxPIxJY.jpg')";
+            } else if (temperature >= 25 && temperature <= 50) {
+                body.style.background = "url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg')";
+            }
+
+            // Additional styling
+            body.style.backgroundRepeat = "no-repeat";
+            body.style.backgroundPosition = "inherit";
+            body.style.backgroundSize = "cover";
+        }
+        // Fonction pour effectuer la requête HTTP et traiter la réponse
+        function fetchData(city) {
+
+            var apiKey = "1708858d94e946a2b6393534241901";
+            var apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
 
-   <footer>
-    <div id="ww_15fad7316ac00" v='1.3' loc='id'
-        a='{"t":"ticker","lang":"fr","sl_lpl":1,"ids":[],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-        Plus de prévisions:
-        <a href="https://oneweather.org/london/30_days/" id="ww_15fad7316ac00_u" target="_blank">London 30 day
-            forecast</a>
-    </div>
-    <script async src="https://app2.weatherwidget.org/js/?id=ww_15fad7316ac00"></script>
-    </footer>
+
+            // Effectuer la requête avec fetch
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Extraire et afficher les données météorologiques
+                    var city = data.location.name;
+                    var country = data.location.country;
+                    var temperature = data.current.temp_c;
+                    var cloud = data.current.cloud;
+                    var speed = data.current.wind_kph;
+                    var direction = data.current.wind_degree;
+                    var orientation = data.current.wind_dir;
+                    var uv = data.current.uv;
+                    var pression = data.current.pressure_mb;
+
+                    document.getElementById("city").textContent = `${city}, ${country}`;
+                    document.getElementById("temperature").textContent = temperature + " °C";
+                    document.getElementById("cloud").textContent = cloud;
+                    document.getElementById("speed").textContent = speed + " Km/h";
+                    document.getElementById("direction").textContent = direction + "°";
+                    document.getElementById("orientation").textContent = orientation;
+                    document.getElementById("UV").textContent = uv;
+                    document.getElementById("pression").textContent = pression + "hPa";
+                    
+
+
+                    // Ajouter la récupération de l'heure actuelle
+                    var localTime = new Date(data.location.localtime);
+                    var options = { hour12: false, hour: 'numeric', minute: 'numeric' };
+                    var formattedTime = localTime.toLocaleTimeString(undefined, options);
+
+                    // Mettre à jour l'élément HTML avec l'heure
+                    document.getElementById("heure").textContent = formattedTime;
+
+
+
+
+
+                    // Vérifier s'il y a des alertes météo
+                    var alerts = data.alerts;
+                    if (alerts && alerts.length > 0) {
+                        // Mettre à jour le contenu de la classe "paragraphe-intemperies" avec les alertes
+                        var alertText = "";
+                        alerts.forEach(alert => {
+                            alertText += `${alert.event}: ${alert.description}\n`;
+                        });
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = alertText;
+                    } else {
+                        // Aucune alerte météo
+                        document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = "Aucune alerte météo.";
+                    }
+                    
+                    // Modifier la fonction fetchData pour appeler fetchWeatherAlerts et mettre à jour les alertes météo
+                    function fetchData(city) {
+                        // ...
+
+                        // Appeler fetchWeatherAlerts avec le nom de la ville
+                        fetchWeatherAlerts(city);
+
+                        // ...
+                    }
+
+
+                    // Changer l'image en fonction du niveau de nuage
+                    var weatherIcon = document.getElementById("weatherIcon");
+
+                    switch (true) {
+                        case (cloud >= 0 && cloud <= 25):
+                            weatherIcon.src = "https://cdn-icons-png.flaticon.com/512/2698/2698240.png";
+                            break;
+                        case (cloud > 25 && cloud <= 50):
+                            weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850024969777203/2698240.png?ex=65bcc3c4&is=65aa4ec4&hm=5d96eccec5e4e81f6bb70abafa647764f4a3589875868c51d8d78b525d011e52&";
+                            break;
+                        case (cloud > 50 && cloud <= 100):
+                            weatherIcon.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850039767285770/cloud-removebg-preview.png?ex=65bcc3c8&is=65aa4ec8&hm=da7ff1963bfccfc93ee91431cec7daec4c16ff65c1bcffb937e069f0a5ad9180&";
+                            break;
+                        default:
+                            weatherIcon.src = "https://example.com/default-image.png";
+                            break;
+                    }
+
+
+                    updateBodyBackground(temperature)
+
+                    // Fonction d'appel pour obtenir les futures données météorologiques
+                    getFutureWeather(city);
+
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des données:', error);
+                });
+        }
+
+
+        // Fonction pour obtenir la localisation par défaut
+        function getDefaultLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    fetchData(position.coords.latitude + ',' + position.coords.longitude);
+                });
+            } else {
+                fetchData('Le_mans');  // ville par défaut
+            }
+        }
+
+        // Fonction pour obtenir les données météorologiques futures
+        function getFutureWeather(city) {
+            var apiKey = "1708858d94e946a2b6393534241901";
+            var currentDate = new Date();
+            currentDate.setHours(0, 0, 0, 0); // Réglage des heures sur minuit pour obtenir des résultats précis
+            var date = currentDate.toISOString().split('T')[0]; // date actuelle au format AAAA-MM-JJ
+
+            var futureApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`;
+
+            fetch(futureApiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var forecastDays = data.forecast.forecastday;
+
+                    // Parcourez les 5 prochains jours et mettez à jour le HTML avec les températures maximales et minimales et la classe de barre de progression
+                    for (let i = 0; i < 5; i++) {
+                        var forecast = forecastDays[i].day;
+                        var minTempId = `temp${i * 2 + 1}`;
+                        var maxTempId = `temp${i * 2 + 2}`;
+                        var progressBarId = `progressbar${i + 1}`;
+
+                        // Mettre à jour le HTML avec les températures maximales et minimales pour chaque jour
+                        document.getElementById(minTempId).innerText = `${forecast.mintemp_c}°C`;
+                        document.getElementById(maxTempId).innerText = `${forecast.maxtemp_c}°C`;
+
+                        // Déterminez la classe de la barre de progression en fonction de la température minimale
+                        var progressBarClass = "progressbar";
+
+                        if (forecast.mintemp_c >= -100 && forecast.mintemp_c < 0) {
+                            progressBarClass += " progressbar1";
+                        } else if (forecast.mintemp_c >= 0 && forecast.mintemp_c < 2) {
+                            progressBarClass += " progressbar2";
+                        } else if (forecast.mintemp_c >= 2 && forecast.mintemp_c < 4) {
+                            progressBarClass += " progressbar3";
+                        } else if (forecast.mintemp_c >= 4 && forecast.mintemp_c < 7) {
+                            progressBarClass += " progressbar4";
+                        } else if (forecast.mintemp_c >= 7 && forecast.mintemp_c < 12) {
+                            progressBarClass += " progressbar5";
+                        } else if (forecast.mintemp_c >= 12 && forecast.mintemp_c < 20) {
+                            progressBarClass += " progressbar6";
+                        } else if (forecast.mintemp_c >= 20 && forecast.mintemp_c < 27) {
+                            progressBarClass += " progressbar7";
+                        } else if (forecast.mintemp_c >= 27 && forecast.mintemp_c < 50) {
+                            progressBarClass += " progressbar8";
+                        }
+
+
+                        // Mettre à jour la classe de la barre de progression
+                        document.getElementById(progressBarId).className = progressBarClass;
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération des données futures:', error);
+                });
+        }
+
+
+        // Gestionnaire d'événements pour la soumission du formulaire
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            // Empêcher le formulaire de se soumettre normalement
+            event.preventDefault();
+
+            // Récupérer la valeur de la ville à partir de l'input
+            var cityInput = document.getElementById('cityInput');
+            var city = cityInput.value;
+
+            // Appeler fetchData avec le nom de la ville
+            fetchData(city);
+        });
+
+
+        // Fonction pour obtenir la localisation par défaut
+        function getDefaultLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    // Appeler fetchData avec les coordonnées de la localisation par défaut
+                    fetchData(position.coords.latitude + ',' + position.coords.longitude);
+                });
+            } else {
+                // Si la géolocalisation n'est pas prise en charge, appeler fetchData avec une ville par défaut (paris)
+                fetchData('Le_mans');
+            }
+        }
+
+
+        // Appeler la fonction au chargement de la page pour obtenir la localisation par défaut
+        window.onload = getDefaultLocation;
+
+    </script>
+
+
+
+
+
 </body>
 
 </html>

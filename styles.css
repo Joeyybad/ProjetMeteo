@@ -1,0 +1,921 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg');
+    background-repeat: no-repeat;
+    background-position: inherit;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.titre-logo {
+    margin-left: 30px;
+    margin-top: 150px;
+    position: absolute;
+    color: white;
+
+}
+
+/*********header********/
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+}
+
+/** Searchbar **/
+
+.recherche {
+    width: 700px;
+    height: 75px;
+    background-color: #ffffff45;
+    border-radius: 20px;
+    margin: auto;
+    margin-left: 150px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.text-input2 {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    color: white;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    margin-left: 60px;
+}
+
+.SearchLogo {
+    margin-left: 170px;
+    margin-top: -50px;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4)
+}
+
+.links-container {
+    text-align: right;
+}
+
+.favorite-link, .graph-link {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.favorite-link a, .graph-link a {
+    padding: 5%;
+    text-decoration: none;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    color: #000000;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.favorite-link:hover {
+transform: scale(1.2);
+}
+
+.graph-link:hover{
+    transform: scale(1.2);
+    }
+
+/** Partie Bandeau météo **/
+
+.bandeauMeteo {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.bandeauMeteo2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.separateur {
+    background-color: white;
+    height: 100px;
+    width: 5px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.418);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    
+}
+
+.temperature {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: -50px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.localisation {
+    color: white;
+    font-size: 70px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.heure {
+    color: white;
+    font-size: 70px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.icon-meteo {
+    width: 100px;
+    margin-right: 50px;
+    margin-left: -50px;
+}
+
+/** Fin de la Partie Bandeau météo **/
+
+/** Petit panneau **/
+
+.intemperies {
+    height: 150px;
+    width: 610px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-left: -650px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.intemperies p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -10px;
+}
+
+.intemperies i {
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.separateur-horizontal {
+    outline: none;
+    height: 1px;
+    border: none;
+    background-color: white;
+}
+
+.separateur-horizontal-2 {
+    outline: none;
+    height: 1.5px;
+    border: none;
+    background-color: white;
+}
+
+.paragraphe-intemperies {
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.ventNuage {
+    height: 260px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-left: -650px;
+    margin-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.ventNuage p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -10px;
+}
+
+.ventNuage i {
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.info {
+    font-size: 17px;
+    text-shadow: 0px 6px 7px #050201;
+    color: black;
+}
+
+.UV {
+    height: 110px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: -260px;
+    margin-left: -275px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.UV p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -50px;
+    margin-left: 35px;
+}
+
+.UV i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.pression {
+    height: 110px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    margin-top: 40px;
+    margin-left: -275px;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.pression p {
+    color: rgb(0, 0, 0);
+    padding-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    margin-top: -5px;
+}
+
+.pression i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.prevision {
+    height: 325px;
+    width: 500px;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    padding-left: 25px;
+    padding-right: 25px;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: -435px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.prevision p {
+    color: rgb(0, 0, 0);
+    margin-top: 15px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.prevision i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.titre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.follow {
+    height: 110px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #ffffff9d;
+    margin-top: -100px;
+    margin-right: -538px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.follow p {
+    color: rgb(0, 0, 0);
+    margin-top: -33px;
+    margin-bottom: -5px;
+    font-size: 25px;
+    padding-left: 30px;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.follow i {
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0px 6px 7px #050201;
+}
+
+.logo2 {
+    margin-right: 10px;
+    margin-top: -5px;
+    font-size: 25px;
+    color: rgb(251, 245, 245);
+    text-shadow: 0px 6px 7px #050201;
+    padding-left: 100px;
+}
+
+.info1 {
+    font-size: 17px;
+    text-shadow: 0px 6px 7px #000000;
+}
+
+.separateur-horizontal-3 {
+    outline: none;
+    height: 1.5px;
+    border: none;
+    background-color: white;
+}
+
+/**** 3 btn ****/
+
+.trois-bouttons {
+    display: none;
+}
+
+.boutton {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.66);
+    transition: 0.2s;
+    background-color: #ffffffab;
+
+}
+
+.boutton:active {
+    background-color: #ffffff;
+    margin-top: 2px;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0);
+    transition: 0.2s;
+}
+
+.boutton i {
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    text-shadow: 0px 6px 7px #05020194;
+}
+
+/**** progressbar ****/
+
+.progressbar-wrapper {
+    color: white;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+}
+
+.jour {
+    padding-right: 25px;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    width: 50px;
+    height: auto;
+    display: inline;
+}
+
+.imgPrev {
+    width: 20px;
+    height: auto;
+    display: inline;
+}
+
+.logoTemps {
+    padding: 2px;
+    display: inline;
+}
+
+.tempFaible { 
+    color: black;
+    font-family: "Poppins", sans-serif;
+    width: 50px;
+    height: auto;
+    text-align: center;
+    display: inline;
+
+}
+
+
+
+/*** toutes les progressbar***/
+
+.progressbar {
+    background: rgb(9, 9, 121);
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);
+    color: white;
+    padding: 3px;
+    margin: 10px;
+    text-align: right;
+    font-size: 10px;
+    border-radius: 15px;
+    width: 70%;
+
+}
+
+.progressbar1 {
+    background: rgb(9, 9, 121);
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);
+}
+
+.progressbar2 {
+    background: rgb(32, 119, 250);
+    background: linear-gradient(90deg, rgba(32, 50, 250, 0.942) 0%, rgb(7, 101, 177) 46%, rgb(0, 145, 255) 100%);
+}
+
+.progressbar3 {
+    background: rgb(32, 250, 240);
+    background: linear-gradient(90deg, rgba(32, 250, 240, 0.9417016806722689) 0%, rgb(7, 177, 149) 46%, rgb(0, 255, 174) 100%);
+}
+
+.progressbar4 {
+    background: rgb(32, 250, 116);
+    background: linear-gradient(90deg, rgba(32, 250, 163, 0.942) 0%, rgb(7, 177, 81) 46%, rgb(115, 255, 0) 100%);
+}
+
+.progressbar5 {
+    background: rgb(65, 250, 32);
+    background: linear-gradient(90deg, rgba(32, 250, 43, 0.942) 0%, rgb(183, 255, 0) 46%, rgb(217, 255, 0) 100%);
+}
+
+.progressbar6 {
+    background: rgb(238, 250, 32);
+    background: linear-gradient(90deg, rgba(238, 250, 32, 0.9417016806722689) 0%, rgba(227, 152, 22, 1) 46%, rgb(255, 162, 0) 100%);
+}
+
+.progressbar7 {
+    background: rgb(250, 166, 32);
+    background: linear-gradient(90deg, rgba(250, 203, 32, 0.942) 0%, rgb(227, 121, 22) 46%, rgb(255, 102, 0) 100%);
+}
+
+.progressbar8 {
+    background: rgb(250, 32, 32);
+    background: linear-gradient(90deg, rgba(255, 128, 0, 0.942) 0%, rgb(227, 66, 22) 46%, rgb(255, 0, 0) 100%);
+}
+
+
+
+
+.tempForte {
+    color: black;
+    margin: 2px;
+    font-family: "Poppins", sans-serif;
+    width: 50px;
+    height: auto;
+    display: inline;
+}
+
+.separateur3 {
+    outline: none;
+    height: 1.5px;
+    border: none;
+    background-color: black;
+}
+
+.bouttons {
+    display: none;
+    justify-content: flex-end;
+    width: 95%;
+    margin-top: 400Px;
+    transition: all 500ms ease-in-out;
+}
+
+
+/************** Responsive ************** /
+
+/** Transition bureau tablette mobile **/
+
+@media screen and (max-width: 1200px) {
+
+    .links-container {
+        display: inline-block;
+        margin-left: 100px;
+    }
+
+    .recherche {
+        display: block;
+        width: 100%;
+        transition: all 500ms ease-in-out;
+    }
+
+    .SearchLogo {
+        font-display: block;
+        transition: all 500ms ease-in-out;
+        margin-left: 40px;
+
+    }
+
+    .separateur {
+        display: none;
+        transition: all 500ms ease-in-out;
+    }
+
+
+    .temperature {
+        color: white;
+        font-size: 50px;
+        text-align: center;
+        text-shadow: 0px 6px 7px #050201;
+        transition: all 500ms ease-in-out;
+    }
+
+    .localisation {
+        color: white;
+        font-size: 50px;
+        text-shadow: 0px 6px 7px #050201;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+
+    }
+
+    .icon-meteo {
+        width: 100px;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+    }
+
+    .intemperies {
+        height: 150px;
+        width: 450px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-left: -450px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+
+    }
+
+    .intemperies p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -10px;
+    }
+
+    .intemperies i {
+        margin-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .separateur-horizontal {
+        outline: none;
+        height: 1px;
+        border: none;
+        background-color: white;
+    }
+
+    .prevision {
+        height: 325px;
+        width: 375px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        padding-left: 25px;
+        padding-right: 25px;
+        position: absolute;
+        margin-left: 80px;
+        margin-top: -435px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .ventNuage {
+        height: 260px;
+        width: 250px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-left: -450px;
+        margin-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .ventNuage p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -10px;
+    }
+
+    .ventNuage i {
+        margin-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .info {
+        font-size: 17px;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .UV {
+        width: 80px;
+        height: 110px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-top: -260px;
+        margin-left: -100px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .UV p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 20px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -50px;
+        margin-left: 35px;
+    }
+
+    .UV i {
+        margin-right: 10px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .pression {
+        height: 110px;
+        width: 130px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-top: 40px;
+        margin-left: -120px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .pression p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -5px;
+    }
+
+    .pression i {
+        margin-right: 10px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .info {
+        font-size: 13px;
+        text-shadow: 0px 6px 7px #050201;
+        transition: all 500ms ease-in-out;
+    }
+
+}
+
+@media screen and (max-width: 950px) {
+
+    .links-container {
+        display: none;
+    }
+
+    body {
+        background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
+        transition: all 500ms ease-in-out;
+    }
+
+    header {
+        display: flex;
+        transition: all 500ms ease-in-out;
+
+    }
+
+
+    img {
+        width: 150px;
+        transition: all 500ms ease-in-out;
+    }
+
+    .intemperies {
+        position: absolute;
+        display: none;
+        transition: all 500ms ease-in-out;
+    }
+
+    .ventNuage {
+        margin-left: 0px;
+        margin-top: 100px;
+        max-width: 80%;
+        transition: all 500ms ease-in-out;
+    }
+
+    .UV {
+        margin-left: 0px;
+        margin-top: 50px;
+        width: 250px;
+        transition: all 500ms ease-in-out;
+    }
+
+    .pression {
+        margin-top: 0px;
+        margin-left: 0px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        /* max-width: 80%; */
+        width: 250px;
+        transition: all 500ms ease-in-out;
+    }
+
+    .prevision {
+        display: block;
+        margin-left: 0px;
+        margin-top: 0px;
+        max-width: 80%;
+        width: 280px;
+        height: 310px;
+        transition: all 500ms ease-in-out;
+    }
+
+    .recherche {
+        display: block;
+        margin-left: 10%;
+        margin-top: 10%;
+        width: 80%;
+        transition: all 500ms ease-in-out;
+    }
+    .SearchLogo{
+         display: none;
+
+    .text-input2 {
+        max-width: 50%;
+        transition: all 500ms ease-in-out;
+        margin-left: 0px;
+    }
+
+    .bandeauMeteo {
+        max-width: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+    }
+
+    .bandeauMeteo2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        transition: all 500ms ease-in-out;
+        width: 50%;
+    }
+
+    .separateur5 {
+        display: none;
+        transition: all 500ms ease-in-out;
+    }
+
+    .temperature2 {
+        margin-left: 30%;
+        margin-right: 0px;
+        transition: all 500ms ease-in-out;
+        margin-top: 50px;
+    }
+
+    .heure {
+        color: white;
+        font-size: 70px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-right: 0px;
+        margin-top: 20%;
+        margin-left: 25%;
+    }
+
+    .icon-meteo2 {
+        margin-right: 0px;
+        margin-left: 25%;
+        width: 20%;
+        margin-bottom: -10%;
+        transition: all 500ms ease-in-out;
+    }
+
+    .localisation2 {
+        margin-left: 25%;
+        font-size: 250%;
+        transition: all 500ms ease-in-out;
+    }
+
+    .bouttons {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin-top: 400Px;
+        transition: all 500ms ease-in-out;
+        margin-bottom: 10px;
+    }
+
+    .boutton>img {
+
+        width: 50px;
+    }
+
+    .follow {
+        display: none;
+    }
+}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('https://e1.pxfuel.com/desktop-wallpaper/781/240/desktop-wallpaper-mountain-landscape-sunset-minimalist-minimalist-abstract-sunset.jpg');
+    background-repeat: no-repeat;
+    background-position: inherit;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+}
+
+.ville {
+    width: 80%;
+    height: auto;
+    background-color: #c9c9c99d;
+    border-radius: 20px;
+    margin: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature {
+    align-items: center;
+}
+
+.button {
+    background-color: transparent;
+    font-size: 40px;
+    border: none;
+}
+
+
+
+
+.city {
+    display: flex;
+    font-size: 80px;
+    align-items: center;
+    color: #ddd;
+    text-shadow: 3px 4px 3px #000000;
+
+}
+
+.icon-meteo {
+    width: 100px;
+    margin-right: 125px;
+    margin-left: -125px;
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 740px) {
+    .ville {
+        width: 70%;
+        height: auto;
+        background-color: #c9c9c99d;
+        border-radius: 20px;
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+
+
+    .SearchLogo{
+     display: none;
+    
+      }
+    .temperature{
+        align-items: center;
+        font-size: 20px;
+    }
+
+    .icon-meteo {
+        margin-right: 0px;
+        margin-top: 20%;
+        margin-left: 25%;
+        width: 20%;
+        margin-bottom: -10%;
+        transition: all 500ms ease-in-out;
+    }
+
+
+    .city {
+        font-size: 30px;
+        align-items: center;
+        color: #ddd;
+        text-shadow: 3px 4px 3px #000000;
+
+    }
+
+    .weatherImg {
+        width: 80px;
+        height: auto;
+        margin-right: 10px;
+        align-items: center;
+    }
+
+
+}
