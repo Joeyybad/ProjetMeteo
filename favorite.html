@@ -75,9 +75,9 @@
                 case (cloud > 50 && cloud <= 100):
                     iconElement.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850039767285770/cloud-removebg-preview.png?ex=65bcc3c8&is=65aa4ec8&hm=da7ff1963bfccfc93ee91431cec7daec4c16ff65c1bcffb937e069f0a5ad9180&";
                     break;
-                // Add more cases as needed
+                // Ajoutez plus de cas si nécessaire
                 default:
-                    // Default image if none of the cases match
+                    // Image par défaut si aucun des cas ne correspond
                     iconElement.src = "https://example.com/default-image.png";
                     break;
             }
@@ -86,6 +86,7 @@
         function searchAndAddToFavorites() {
             var cityInput = document.getElementById('cityInput');
             var city = cityInput.value;
+            
             // Vérifier si le nom de la ville est valide (vous pouvez utiliser une liste ou une API de géocodage pour valider)
             if (isValidCity(city)) {
                 // Appeler fetchData avec le nom de la ville
@@ -96,9 +97,11 @@
                         var cityName = data.location.name;
                         document.getElementById("city").textContent = cityName;
                         document.getElementById("temperature").textContent = temperature + " °C";
-                        // Mettre à jour l'icône dans le bandeau météo
+
+                         // Mettre à jour l'icône dans le bandeau météo
                         var weatherIcon = document.getElementById("weatherIcon");
                         updateWeatherIcon(weatherIcon, cloud);
+
                         // Créer un nouveau bloc de ville favorite
                         var favoriteCityContainer = document.createElement("div");
                         favoriteCityContainer.className = "ville";
@@ -117,6 +120,7 @@
                         // Ajouter le bloc de ville favorite à la liste des favoris
                         var mainContainer = document.querySelector('main');
                         mainContainer.appendChild(favoriteCityContainer);
+
                         // Appeler la fonction pour mettre à jour l'icône météo de la ville favorite
                         var cityWeatherIcon = document.getElementById(`weatherIcon${cityName}`);
                         updateWeatherIcon(cityWeatherIcon, cloud);

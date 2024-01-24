@@ -20,18 +20,22 @@
             alt="logo InstaMeteo">
         <span class="titre-logo">InstaMétéo</span>
         <form id="searchForm" action="#">
-            <div class="recherche">   
-                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput">
+            <div class="recherche">
+                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput" spellcheck="false" autocomplete="off" >
             </div>
             <div class="SearchLogo">
                 <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
             </div>
         </form>
-
-
-
-
+        <div class="links-container">
+            <div class="favorite-link">
+                <a href="favorite.html">Favoris</a>
+            </div>
+            <div class="graph-link">
+                <a href="#">Prévisions</a>
+            </div>
     </header>
+
     <br>
     <div class="bandeauMeteo">
         <div class="temperature" id="temperature"></div>
@@ -54,7 +58,7 @@
                 </div>
                 <hr class="separateur-horizontal">
 
-            <div class="paragraphe-intemperies" id="weatherAlert"></div>    
+                <div class="paragraphe-intemperies" id="weatherAlert"></div>
             </div>
             <div class="ventNuage">
                 <div class="titre">
@@ -111,7 +115,7 @@
                     <div class="tempFaible"><span id="temp3">temp</span></div>
                     <div class="progressbar progressbarMonday" id="progressbar2"></div>
                     <div class="tempForte"><span id="temp4">temp</span></div>
-               </div>
+                </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Mercredi</div>
@@ -131,7 +135,7 @@
                     <div class="tempFaible"><span id="temp7">temp</span></div>
                     <div class="progressbar progressbarWednesday" id="progressbar4"></div>
                     <div class="tempForte"><span id="temp8">temp</span></div>
-                  </div>
+                </div>
                 <hr class="separateur3">
                 <div class="progressbar-wrapper">
                     <div class="jour">Vendredi</div>
@@ -165,35 +169,26 @@
         </div>
     </main>
 
-
-
-    <!-- <footer>
-                <div id="ww_39c7df4c5be60" v='1.3' loc='id'
-                    a='{"t":"ticker","lang":"fr","sl_lpl":1,"ids":["wl863"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"#0288D1","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#FFFFFF","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}'>
-                    Plus de prévisions: <a href="https://oneweather.org/fr/paris/30_jours/" id="ww_39c7df4c5be60_u"
-                        target="_blank">Meteo a 30 jours</a></div>
-                <script async src="https://app2.weatherwidget.org/js/?id=ww_39c7df4c5be60"></script>
-            </footer> -->
     <script>
 
-function updateBodyBackground(temperature) {
-    var body = document.body;
+        function updateBodyBackground(temperature) {
+            var body = document.body;
 
-    if (temperature >= -50 && temperature < 0) {
-        body.style.background = "url('https://papers.co/wallpaper/papers.co-oa50-snow-sky-winter-cold-sun-nature-35-3840x2160-4k-wallpaper.jpg')";
-    } else if (temperature >= 0 && temperature < 12) {
-        body.style.background = "url('https://www.shutterstock.com/image-photo/aerial-view-on-frozen-seawater-600nw-1924605944.jpg')";
-    } else if (temperature >= 12 && temperature < 25) {
-        body.style.background = "url('https://t4.ftcdn.net/jpg/03/68/60/21/360_F_368602106_QgaRuFg7Fxa6W0bu5ZWcokXXinxPIxJY.jpg')";
-    } else if (temperature >= 25 && temperature <= 50) {
-        body.style.background = "url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg')";
-    }
+            if (temperature >= -50 && temperature < 0) {
+                body.style.background = "url('https://papers.co/wallpaper/papers.co-oa50-snow-sky-winter-cold-sun-nature-35-3840x2160-4k-wallpaper.jpg')";
+            } else if (temperature >= 0 && temperature < 12) {
+                body.style.background = "url('https://www.shutterstock.com/image-photo/aerial-view-on-frozen-seawater-600nw-1924605944.jpg')";
+            } else if (temperature >= 12 && temperature < 25) {
+                body.style.background = "url('https://t4.ftcdn.net/jpg/03/68/60/21/360_F_368602106_QgaRuFg7Fxa6W0bu5ZWcokXXinxPIxJY.jpg')";
+            } else if (temperature >= 25 && temperature <= 50) {
+                body.style.background = "url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg')";
+            }
 
-    // Additional styling
-    body.style.backgroundRepeat = "no-repeat";
-    body.style.backgroundPosition = "inherit";
-    body.style.backgroundSize = "cover";
-}
+            // Additional styling
+            body.style.backgroundRepeat = "no-repeat";
+            body.style.backgroundPosition = "inherit";
+            body.style.backgroundSize = "cover";
+        }
         // Fonction pour effectuer la requête HTTP et traiter la réponse
         function fetchData(city) {
 
@@ -208,6 +203,7 @@ function updateBodyBackground(temperature) {
                 .then(data => {
                     // Extraire et afficher les données météorologiques
                     var city = data.location.name;
+                    var country = data.location.country;
                     var temperature = data.current.temp_c;
                     var cloud = data.current.cloud;
                     var speed = data.current.wind_kph;
@@ -216,7 +212,7 @@ function updateBodyBackground(temperature) {
                     var uv = data.current.uv;
                     var pression = data.current.pressure_mb;
 
-                    document.getElementById("city").textContent = city;
+                    document.getElementById("city").textContent = `${city}, ${country}`;
                     document.getElementById("temperature").textContent = temperature + " °C";
                     document.getElementById("cloud").textContent = cloud;
                     document.getElementById("speed").textContent = speed + " Km/h";
@@ -224,6 +220,18 @@ function updateBodyBackground(temperature) {
                     document.getElementById("orientation").textContent = orientation;
                     document.getElementById("UV").textContent = uv;
                     document.getElementById("pression").textContent = pression + "hPa";
+                    
+
+
+                    // Ajouter la récupération de l'heure actuelle
+                    var localTime = new Date(data.location.localtime);
+                    var options = { hour12: false, hour: 'numeric', minute: 'numeric' };
+                    var formattedTime = localTime.toLocaleTimeString(undefined, options);
+
+                    // Mettre à jour l'élément HTML avec l'heure
+                    document.getElementById("heure").textContent = formattedTime;
+
+
 
 
 
@@ -273,7 +281,7 @@ function updateBodyBackground(temperature) {
 
                     updateBodyBackground(temperature)
 
-                    // Call function to get future weather data
+                    // Fonction d'appel pour obtenir les futures données météorologiques
                     getFutureWeather(city);
 
                 })
@@ -290,7 +298,7 @@ function updateBodyBackground(temperature) {
                     fetchData(position.coords.latitude + ',' + position.coords.longitude);
                 });
             } else {
-                fetchData('Le_mans');  // You can change this to any default city
+                fetchData('Le_mans');  // ville par défaut
             }
         }
 
@@ -298,8 +306,8 @@ function updateBodyBackground(temperature) {
         function getFutureWeather(city) {
             var apiKey = "1708858d94e946a2b6393534241901";
             var currentDate = new Date();
-            currentDate.setHours(0, 0, 0, 0); // Set hours to midnight to get accurate results
-            var date = currentDate.toISOString().split('T')[0]; // Get the current date in YYYY-MM-DD format
+            currentDate.setHours(0, 0, 0, 0); // Réglage des heures sur minuit pour obtenir des résultats précis
+            var date = currentDate.toISOString().split('T')[0]; // date actuelle au format AAAA-MM-JJ
 
             var futureApiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=5`;
 
@@ -308,18 +316,18 @@ function updateBodyBackground(temperature) {
                 .then(data => {
                     var forecastDays = data.forecast.forecastday;
 
-                    // Loop through the next 5 days and update HTML with max and min temperatures and progress bar class
+                    // Parcourez les 5 prochains jours et mettez à jour le HTML avec les températures maximales et minimales et la classe de barre de progression
                     for (let i = 0; i < 5; i++) {
                         var forecast = forecastDays[i].day;
                         var minTempId = `temp${i * 2 + 1}`;
                         var maxTempId = `temp${i * 2 + 2}`;
                         var progressBarId = `progressbar${i + 1}`;
 
-                        // Update HTML with max and min temperatures for each day
+                        // Mettre à jour le HTML avec les températures maximales et minimales pour chaque jour
                         document.getElementById(minTempId).innerText = `${forecast.mintemp_c}°C`;
                         document.getElementById(maxTempId).innerText = `${forecast.maxtemp_c}°C`;
 
-                        // Determine the class for the progress bar based on the min temperature
+                        // Déterminez la classe de la barre de progression en fonction de la température minimale
                         var progressBarClass = "progressbar";
 
                         if (forecast.mintemp_c >= -100 && forecast.mintemp_c < 0) {
@@ -341,7 +349,7 @@ function updateBodyBackground(temperature) {
                         }
 
 
-                        // Update the class of the progress bar
+                        // Mettre à jour la classe de la barre de progression
                         document.getElementById(progressBarId).className = progressBarClass;
                     }
                 })
