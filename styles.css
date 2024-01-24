@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
     background: url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg');
@@ -19,9 +18,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centrer verticalement */
     justify-content: center;
-    /* Centrer horizontalement */
 }
 
 
@@ -54,7 +51,7 @@ img {
 /** Searchbar **/
 
 .recherche {
-    width: 950px;
+    width: 700px;
     height: 75px;
     background-color: #ffffff45;
     border-radius: 20px;
@@ -76,19 +73,49 @@ img {
     font-family: "Poppins", sans-serif;
     margin-left: 60px;
 }
-.SearchLogo{
+
+.SearchLogo {
     margin-left: 170px;
     margin-top: -50px;
     position: absolute;
-    color:rgba(255, 255, 255, 0.4)
-   
+    color: rgba(255, 255, 255, 0.4)
 }
+
+.links-container {
+    text-align: right;
+}
+
+.favorite-link, .graph-link {
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.favorite-link a, .graph-link a {
+    padding: 5%;
+    text-decoration: none;
+    font-size: 25px;
+    text-shadow: 0px 6px 7px #050201;
+    color: #000000;
+    border-radius: 20px;
+    background-color: #ffffffab;
+    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+}
+
+.favorite-link:hover {
+transform: scale(1.2);
+}
+
+.graph-link:hover{
+    transform: scale(1.2);
+    }
 
 /** Partie Bandeau météo **/
 
 .bandeauMeteo {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .separateur {
@@ -98,6 +125,7 @@ img {
     border-radius: 20px;
     -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.418);
     box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+    
 }
 
 .temperature {
@@ -115,7 +143,7 @@ img {
     text-shadow: 0px 6px 7px #050201;
 }
 
-.heure{
+.heure {
     color: white;
     font-size: 70px;
     text-shadow: 0px 6px 7px #050201;
@@ -312,7 +340,8 @@ img {
     flex-direction: row;
     align-items: center;
 }
-.follow{
+
+.follow {
     height: 110px;
     width: 300px;
     border-radius: 20px;
@@ -322,6 +351,7 @@ img {
     padding-left: 25px;
     padding-right: 25px;
 }
+
 .follow p {
     color: rgb(0, 0, 0);
     margin-top: -33px;
@@ -330,14 +360,16 @@ img {
     padding-left: 30px;
     text-shadow: 0px 6px 7px #050201;
 }
-.follow i{
+
+.follow i {
     margin-right: 10px;
     margin-top: 15px;
     font-size: 25px;
     color: white;
     text-shadow: 0px 6px 7px #050201;
 }
-.logo2  {
+
+.logo2 {
     margin-right: 10px;
     margin-top: -5px;
     font-size: 25px;
@@ -345,10 +377,12 @@ img {
     text-shadow: 0px 6px 7px #050201;
     padding-left: 100px;
 }
+
 .info1 {
     font-size: 17px;
     text-shadow: 0px 6px 7px #000000;
 }
+
 .separateur-horizontal-3 {
     outline: none;
     height: 1.5px;
@@ -392,7 +426,6 @@ img {
 /**** progressbar ****/
 
 .progressbar-wrapper {
-    /* background-color: #dfe6e9; */
     color: white;
     border-radius: 15px;
     width: 100%;
@@ -400,7 +433,7 @@ img {
 }
 
 .jour {
-    padding-right:25px;
+    padding-right: 25px;
     color: black;
     font-family: "Poppins", sans-serif;
     width: 50px;
@@ -408,23 +441,21 @@ img {
     display: inline;
 }
 
- .imgPrev{
-    width:20px;
-    height:auto;
-    display: inline;
-} 
-
-.logoTemps{
-    padding:2px;
+.imgPrev {
+    width: 20px;
+    height: auto;
     display: inline;
 }
 
-.tempFaible {
-    /* margin-right: px; */
+.logoTemps {
+    padding: 2px;
+    display: inline;
+}
+
+.tempFaible { 
     color: black;
     font-family: "Poppins", sans-serif;
     width: 50px;
-    /* margin: 3px; */
     height: auto;
     text-align: center;
     display: inline;
@@ -435,7 +466,7 @@ img {
 
 /*** toutes les progressbar***/
 
-.progressbar{
+.progressbar {
     background: rgb(9, 9, 121);
     background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);
     color: white;
@@ -450,7 +481,7 @@ img {
 
 .progressbar1 {
     background: rgb(9, 9, 121);
-    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);  
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 40%, rgba(0, 212, 255, 1) 100%);
 }
 
 .progressbar2 {
@@ -508,7 +539,7 @@ img {
 }
 
 .bouttons {
-    display:none;
+    display: none;
     justify-content: flex-end;
     width: 95%;
     margin-top: 400Px;
@@ -520,53 +551,52 @@ img {
 
 /** Transition bureau tablette mobile **/
 
-@media screen and (max-width: 1200px){
-    
+@media screen and (max-width: 1200px) {
+
+    .links-container {
+        display: inline-block;
+        margin-left: 100px;
+    }
+
     .recherche {
         display: block;
         width: 100%;
         transition: all 500ms ease-in-out;
     }
-  .SearchLogo{
-    font-display: block;
-    transition: all 500ms ease-in-out;
-    margin-left: 40px;
 
-  }
-    
-    .separateur{
-        display : none;
+    .SearchLogo {
+        font-display: block;
+        transition: all 500ms ease-in-out;
+        margin-left: 40px;
+
+    }
+
+    .separateur {
+        display: none;
         transition: all 500ms ease-in-out;
     }
 
-    /* main{
-        max-width:100%;
 
-    } */
     .temperature {
         color: white;
         font-size: 50px;
         text-align: center;
-        /* margin-left: 120px;
-        margin-right: -120px; */
         text-shadow: 0px 6px 7px #050201;
         transition: all 500ms ease-in-out;
     }
-    
+
     .localisation {
         color: white;
         font-size: 50px;
         text-shadow: 0px 6px 7px #050201;
         text-align: center;
         transition: all 500ms ease-in-out;
-        
+
     }
-    
+
     .icon-meteo {
         width: 100px;
         text-align: center;
-        /* margin-right: 125px;
-        margin-left: -125px; */
         transition: all 500ms ease-in-out;
     }
 
@@ -583,6 +613,7 @@ img {
         transition: all 500ms ease-in-out;
 
     }
+
     .intemperies p {
         color: rgb(0, 0, 0);
         padding-top: 15px;
@@ -591,7 +622,7 @@ img {
         text-shadow: 0px 6px 7px #050201;
         margin-top: -10px;
     }
-    
+
     .intemperies i {
         margin-right: 10px;
         margin-top: 15px;
@@ -600,7 +631,7 @@ img {
         color: white;
         text-shadow: 0px 6px 7px #050201;
     }
-    
+
     .separateur-horizontal {
         outline: none;
         height: 1px;
@@ -622,113 +653,120 @@ img {
         box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
         transition: all 500ms ease-in-out;
     }
+
     .ventNuage {
-    height: 260px;
-    width: 250px;
-    border-radius: 20px;
-    background-color: #ffffffab;
-    margin-left: -450px;
-    margin-top: 25px;
-    padding-left: 25px;
-    padding-right: 25px;
-    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    transition: all 500ms ease-in-out;
+        height: 260px;
+        width: 250px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-left: -450px;
+        margin-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .ventNuage p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -10px;
+    }
+
+    .ventNuage i {
+        margin-right: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .info {
+        font-size: 17px;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .UV {
+        width: 80px;
+        height: 110px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-top: -260px;
+        margin-left: -100px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .UV p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 20px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -50px;
+        margin-left: 35px;
+    }
+
+    .UV i {
+        margin-right: 10px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .pression {
+        height: 110px;
+        width: 130px;
+        border-radius: 20px;
+        background-color: #ffffffab;
+        margin-top: 40px;
+        margin-left: -120px;
+        padding-left: 25px;
+        padding-right: 25px;
+        -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
+        transition: all 500ms ease-in-out;
+    }
+
+    .pression p {
+        color: rgb(0, 0, 0);
+        padding-top: 15px;
+        margin-bottom: -5px;
+        font-size: 25px;
+        text-shadow: 0px 6px 7px #050201;
+        margin-top: -5px;
+    }
+
+    .pression i {
+        margin-right: 10px;
+        margin-top: 15px;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 6px 7px #050201;
+    }
+
+    .info {
+        font-size: 13px;
+        text-shadow: 0px 6px 7px #050201;
+        transition: all 500ms ease-in-out;
+    }
+
 }
 
-.ventNuage p {
-    color: rgb(0, 0, 0);
-    padding-top: 15px;
-    margin-bottom: -5px;
-    font-size: 25px;
-    text-shadow: 0px 6px 7px #050201;
-    margin-top: -10px;
-}
-
-.ventNuage i {
-    margin-right: 10px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 25px;
-    color: white;
-    text-shadow: 0px 6px 7px #050201;
-}
-
-.info {
-    font-size: 17px;
-    text-shadow: 0px 6px 7px #050201;
-}
-
-.UV {
-    width: 80px ;
-    height: 110px;
-    border-radius: 20px;
-    background-color: #ffffffab;
-    margin-top: -260px;
-    margin-left: -100px;
-    padding-left: 25px;
-    padding-right: 25px;
-    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    transition: all 500ms ease-in-out;
-}
-
-.UV p {
-    color: rgb(0, 0, 0);
-    padding-top: 15px;
-    margin-bottom: -5px;
-    font-size: 20px;
-    text-shadow: 0px 6px 7px #050201;
-    margin-top: -50px;
-    margin-left: 35px;
-}
-
-.UV i {
-    margin-right: 10px;
-    margin-top: 15px;
-    font-size: 25px;
-    color: white;
-    text-shadow: 0px 6px 7px #050201;
-}
-
-.pression {
-    height: 110px;
-    width: 130px;
-    border-radius: 20px;
-    background-color: #ffffffab;
-    margin-top: 40px;
-    margin-left: -120px;
-    padding-left: 25px;
-    padding-right: 25px;
-    -webkit-box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    box-shadow: 0px 7px 3px -1px rgba(0, 0, 0, 0.251);
-    transition: all 500ms ease-in-out;
-}
-
-.pression p {
-    color: rgb(0, 0, 0);
-    padding-top: 15px;
-    margin-bottom: -5px;
-    font-size: 25px;
-    text-shadow: 0px 6px 7px #050201;
-    margin-top: -5px;
-}
-
-.pression i {
-    margin-right: 10px;
-    margin-top: 15px;
-    font-size: 25px;
-    color: white;
-    text-shadow: 0px 6px 7px #050201;
-}
-.info {
-    font-size: 13px;
-    text-shadow: 0px 6px 7px #050201;
-    transition: all 500ms ease-in-out;
-}
-    
-}
 @media screen and (max-width: 950px) {
+
+    .links-container {
+        display: none;
+    }
 
     body {
         background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
@@ -819,7 +857,7 @@ img {
         transition: all 500ms ease-in-out;
     }
 
-    .heure{
+    .heure {
         color: white;
         font-size: 70px;
         text-shadow: 0px 6px 7px #050201;
@@ -845,18 +883,19 @@ img {
 
     .bouttons {
         display: flex;
-        justify-content:space-between;
+        justify-content: space-between;
         width: 95%;
         margin-top: 400Px;
         transition: all 500ms ease-in-out;
         margin-bottom: 10px;
     }
-    .boutton > img {
-   
+
+    .boutton>img {
+
         width: 50px;
     }
-   .follow{
-    display: none;
-   }
-}
 
+    .follow {
+        display: none;
+    }
+}
