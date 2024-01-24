@@ -528,9 +528,7 @@ img {
         transition: all 500ms ease-in-out;
     }
   .SearchLogo{
-    font-display: block;
-    transition: all 500ms ease-in-out;
-    margin-left: 40px;
+  display: none;
 
   }
     
@@ -741,6 +739,7 @@ img {
 
     }
 
+
     img {
         width: 150px;
         transition: all 500ms ease-in-out;
@@ -793,6 +792,8 @@ img {
         width: 80%;
         transition: all 500ms ease-in-out;
     }
+    .SearchLogo{
+         display: none;
 
     .text-input {
         width: 70%;
@@ -850,4 +851,3 @@ img {
     display: none;
    }
 }
-
