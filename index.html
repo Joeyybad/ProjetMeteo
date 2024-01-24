@@ -21,7 +21,8 @@
         <span class="titre-logo">InstaMétéo</span>
         <form id="searchForm" action="#">
             <div class="recherche">
-                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput" spellcheck="false" autocomplete="off" >
+                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput" spellcheck="false"
+                    autocomplete="off">
             </div>
             <div class="SearchLogo">
                 <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
@@ -41,6 +42,8 @@
         <div class="temperature" id="temperature"></div>
         <span class="separateur"></span>
         <div class="localisation" id="city"></div>
+        <span class="separateur"></span>
+        <div class="heure" id="heure"></div>
         <span class="separateur"></span>
         <div class="temps">
             <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
@@ -184,7 +187,7 @@
                 body.style.background = "url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg')";
             }
 
-            // Additional styling
+            // // Style supplémentaire
             body.style.backgroundRepeat = "no-repeat";
             body.style.backgroundPosition = "inherit";
             body.style.backgroundSize = "cover";
@@ -220,7 +223,7 @@
                     document.getElementById("orientation").textContent = orientation;
                     document.getElementById("UV").textContent = uv;
                     document.getElementById("pression").textContent = pression + "hPa";
-                    
+
 
 
                     // Ajouter la récupération de l'heure actuelle
@@ -230,9 +233,6 @@
 
                     // Mettre à jour l'élément HTML avec l'heure
                     document.getElementById("heure").textContent = formattedTime;
-
-
-
 
 
                     // Vérifier s'il y a des alertes météo
@@ -248,7 +248,7 @@
                         // Aucune alerte météo
                         document.querySelector("#weatherAlert .paragraphe-intemperies").textContent = "Aucune alerte météo.";
                     }
-                    
+
                     // Modifier la fonction fetchData pour appeler fetchWeatherAlerts et mettre à jour les alertes météo
                     function fetchData(city) {
                         // ...

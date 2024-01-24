@@ -23,8 +23,34 @@ body {
     justify-content: space-between;
 }
 
-.temperature {
+.separateur5 {
+    background-color: white;
+    height: 100px;
+    width: 5px;
+    border-radius: 20px;
+}
+
+.bandeauMeteo2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature2 {
+    display: flex;
     align-items: center;
+    margin-left: 100px;
+    margin-right: -50px;
+    font-size: 40px;
+    color: white;
+}
+
+.localisation2 {
+    padding-left: 50px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 40px;
 }
 
 .button {
@@ -33,7 +59,9 @@ body {
     border: none;
 }
 
-
+.button:hover {
+    transform: scale(1.2);
+}
 
 
 .city {
@@ -45,14 +73,18 @@ body {
 
 }
 
+/* .weatherImg{
+    display: flex;
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+    align-items: center;
+} */
+
 .icon-meteo {
     width: 100px;
     margin-right: 125px;
     margin-left: -125px;
-}
-
-.button:hover {
-    transform: scale(1.2);
 }
 
 @media screen and (max-width: 740px) {
@@ -64,17 +96,22 @@ body {
         margin: 10px;
         display: flex;
         flex-direction: row;
+
     }
 
 
+    .SearchLogo {
+        font-display: block;
+        transition: all 500ms ease-in-out;
+        margin-left: 40px;
 
-    .SearchLogo{
-     display: none;
-    
-      }
-    .temperature{
+    }
+
+    .temperature2 {
         align-items: center;
         font-size: 20px;
+        margin-left: 10px;
+
     }
 
     .icon-meteo {
