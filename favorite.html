@@ -21,7 +21,7 @@
         <span class="titre-logo">InstaMétéo</span>
         <form id="searchForm" action="#">
             <div class="recherche">
-                <input type="text" placeholder="Rechercher..." class="text-input2" id="cityInput">
+                <input type="text" placeholder="Rechercher..." class="text-input" id="cityInput" spellcheck="false" autocomplete="off">
                 <button type="button" onclick="searchAndAddToFavorites()" class="button"><i
                         class="fa-solid fa-heart-circle-plus" style="color: #FFFFFF;"></i></i></button>
             </div>
@@ -29,6 +29,7 @@
     </header>
     <br>
     <br>
+
     <div class="bandeauMeteo">
         <div class="temperature" id="temperature"></div>
         <span class="separateur"></span>
@@ -37,6 +38,7 @@
         <div class="temps">
             <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
                 id="weatherIcon">
+
         </div>
     </div>
     <main>
@@ -50,6 +52,8 @@
             <!-- Contenu de la troisième ville favorite -->
         </div>
     </main>
+
     <script src="js/favorite.js"></script>
+
 </body>
 </html>

@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
     background: url('images/papers.co-oa50-snow-sky-winter-cold-sun-nature-35-3840x2160-4k-wallpaper.jpg');
@@ -37,6 +36,7 @@ body {
     background-color: transparent;
     font-size: 40px;
     border: none;
+
 }
 
 
@@ -82,7 +82,10 @@ body {
 
     }
 
+
     .temperature {
+
+
         align-items: center;
         font-size: 1px;
         margin-left: 10px;
