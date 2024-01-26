@@ -29,13 +29,16 @@
     </header>
     <br>
     <br>
-    <div class="bandeauMeteo2">
-        <div class="temperature2" id="temperature"></div>
-        <span class="separateur5"></span>
-        <div class="localisation2" id="city"></div>
-        <span class="separateur5"></span>
-        <div class="temps2">
-            <img src="" alt="" class="icon-meteo" id="weatherIcon">
+
+    <div class="bandeauMeteo">
+        <div class="temperature" id="temperature"></div>
+        <span class="separateur"></span>
+        <div class="localisation3" id="city"></div>
+        <span class="separateur"></span>
+        <div class="temps">
+            <img src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="icon-meteo" class="icon-meteo"
+                id="weatherIcon">
+
         </div>
     </div>
     <main>
@@ -49,128 +52,8 @@
             <!-- Contenu de la troisième ville favorite -->
         </div>
     </main>
-    <script>
-        // Fonction pour effectuer la requête HTTP et traiter la réponse
-        function fetchData(city) {
-            var apiKey = "1708858d94e946a2b6393534241901";
-            var apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
-            // Effectuer la requête avec fetch
-            return fetch(apiUrl)
-                .then(response => response.json());
-        }
-        // Fonction pour ajouter une ville aux favoris
-        function addToFavorites(city) {
-            // Vous pouvez personnaliser la logique pour stocker les villes en favoris
-            console.log(`${city} a été ajouté aux favoris !`);
-        }
-        // Fonction pour traiter l'icône météo
-        function updateWeatherIcon(iconElement, cloud) {
-            switch (true) {
-                case (cloud >= 0 && cloud <= 25):
-                    iconElement.src = "https://cdn-icons-png.flaticon.com/512/2698/2698240.png";
-                    break;
-                case (cloud > 25 && cloud <= 50):
-                    iconElement.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850024969777203/2698240.png?ex=65bcc3c4&is=65aa4ec4&hm=5d96eccec5e4e81f6bb70abafa647764f4a3589875868c51d8d78b525d011e52&";
-                    break;
-                case (cloud > 50 && cloud <= 100):
-                    iconElement.src = "https://cdn.discordapp.com/attachments/1194943321416667227/1197850039767285770/cloud-removebg-preview.png?ex=65bcc3c8&is=65aa4ec8&hm=da7ff1963bfccfc93ee91431cec7daec4c16ff65c1bcffb937e069f0a5ad9180&";
-                    break;
-                // Ajoutez plus de cas si nécessaire
-                default:
-                    // Image par défaut si aucun des cas ne correspond
-                    iconElement.src = "https://example.com/default-image.png";
-                    break;
-            }
-        }
-        // Fonction pour effectuer une recherche et ajouter aux favoris
-        function searchAndAddToFavorites() {
-            var cityInput = document.getElementById('cityInput');
-            var city = cityInput.value;
-            
-            // Vérifier si le nom de la ville est valide (vous pouvez utiliser une liste ou une API de géocodage pour valider)
-            if (isValidCity(city)) {
-                // Appeler fetchData avec le nom de la ville
-                fetchData(city)
-                    .then(data => {
-                        var temperature = data.current.temp_c;
-                        var cloud = data.current.cloud;
-                        var cityName = data.location.name;
-                        document.getElementById("city").textContent = cityName;
-                        document.getElementById("temperature").textContent = temperature + " °C";
 
-                         // Mettre à jour l'icône dans le bandeau météo
-                        var weatherIcon = document.getElementById("weatherIcon");
-                        updateWeatherIcon(weatherIcon, cloud);
+    <script src="js/favorite.js"></script>
 
-                        // Créer un nouveau bloc de ville favorite
-                        var favoriteCityContainer = document.createElement("div");
-                        favoriteCityContainer.className = "ville";
-                        favoriteCityContainer.innerHTML = `
-                            <div class="temperature">
-                                <p>${temperature} °C</p>
-                            </div>
-                            <div class="nomVille">
-                                <p class="city">${cityName}</p>
-                            </div>
-                            <div class="logoTemp">
-                                <img src="" class="weatherImg" alt="weatherIcon" srcset=""
-                                    id="weatherIcon${cityName}">
-                            </div>
-                        `;
-                        // Ajouter le bloc de ville favorite à la liste des favoris
-                        var mainContainer = document.querySelector('main');
-                        mainContainer.appendChild(favoriteCityContainer);
-
-                        // Appeler la fonction pour mettre à jour l'icône météo de la ville favorite
-                        var cityWeatherIcon = document.getElementById(`weatherIcon${cityName}`);
-                        updateWeatherIcon(cityWeatherIcon, cloud);
-                    })
-                    .catch(error => {
-                        console.error('Erreur lors de la récupération des données:', error);
-                    });
-            } else {
-                console.error('Nom de ville invalide.');
-            }
-        }
-        // Fonction pour vérifier si le nom de la ville est valide (vous pouvez personnaliser cette fonction)
-        function isValidCity(city) {
-            // Exemple basique de validation
-            // Vous pouvez utiliser une liste de villes connues ou une API de géocodage pour une validation plus précise
-            return /^[a-zA-Z\s]*$/.test(city);
-        }
-        // Gestionnaire d'événements pour la touche "Entrée"
-        document.getElementById('cityInput').addEventListener('keydown', function (event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                // Appeler la fonction pour effectuer la recherche sans ajouter aux favoris
-                searchCity();
-            }
-        });
-        // Fonction pour effectuer la recherche sans ajouter aux favoris
-        function searchCity() {
-            var cityInput = document.getElementById('cityInput');
-            var city = cityInput.value;
-            // Vérifier si le nom de la ville est valide (vous pouvez utiliser une liste ou une API de géocodage pour valider)
-            if (isValidCity(city)) {
-                // Appeler fetchData avec le nom de la ville
-                fetchData(city)
-                    .then(data => {
-                        var temperature = data.current.temp_c;
-                        var cloud = data.current.cloud;
-                        var cityName = data.location.name;
-                        document.getElementById("city").textContent = cityName;
-                        document.getElementById("temperature").textContent = temperature + " °C";
-                        // Mettre à jour l'icône dans le bandeau météo
-                        var weatherIcon = document.getElementById("weatherIcon");
-                        updateWeatherIcon(weatherIcon, cloud);
-                    })
-                    .catch(error => {
-                        console.error('Erreur lors de la récupération des données:', error);
-                    });
-            } else {
-                console.error('Nom de ville invalide.');
-            }
-        }
-    </script>
 </body>
 </html>
