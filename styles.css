@@ -7,11 +7,12 @@ body {
     /* Cette propriété garantit que le contenu occupe au moins 100% de la hauteur de la fenêtre visible. */
     display: flex;
     flex-direction: column;
-    background: url('https://pics.freeartbackgrounds.com/fullhd/Sunset_Sky_Background-364.jpg');
+    background: url('images/papers.co-oa50-snow-sky-winter-cold-sun-nature-35-3840x2160-4k-wallpaper.jpg');
     background-repeat: no-repeat;
     background-position: inherit;
     background-size: cover;
     font-family: "Poppins", sans-serif;
+    transition: all 500ms ease-in-out;
 }
 
 main {
@@ -114,10 +115,16 @@ img {
     text-shadow: 0px 6px 7px #050201;
 }
 
-.localisation {
+.localisation3 {
     color: white;
     font-size: 70px;
     text-shadow: 0px 6px 7px #050201;
+}
+
+.localisation2 {
+    color: white;
+    margin-right: 200px;
+    font-size: 50px;
 }
 
 .heure{
@@ -736,7 +743,6 @@ img {
 @media screen and (max-width: 950px) {
 
     body {
-        background-image: url("https://cdn.discordapp.com/attachments/1194943321416667227/1197822680058040370/5699feb841990_thumb900.webp?ex=65bcaa4d&is=65aa354d&hm=39bdd21d40dfce572f6b73298981c8dbd533a75ba2019859e1a3c01a19c570a8&");
         transition: all 500ms ease-in-out;
     }
 
@@ -785,8 +791,7 @@ img {
         display: block;
         margin-left: 0px;
         margin-top: 0px;
-        max-width: 80%;
-        width: 280px;
+        width: 250px;
         height: 310px;
         transition: all 500ms ease-in-out;
     }
@@ -800,7 +805,7 @@ img {
     }
 
     .text-input2 {
-        max-width: 50%;
+        max-width: 98%;
         transition: all 500ms ease-in-out;
         margin-left: 0px;
     }
@@ -841,7 +846,7 @@ img {
         font-size: 70px;
         text-shadow: 0px 6px 7px #050201;
         margin-right: 0px;
-        margin-top: 20%;
+        margin-top: 0%;
         margin-left: 25%;
     }
 
@@ -853,10 +858,20 @@ img {
         transition: all 500ms ease-in-out;
     }
 
+    
+.icon-meteo {
+    width: 100px;
+    margin-left: 40%;
+}
+
     .localisation2 {
         margin-left: 25%;
         font-size: 250%;
         transition: all 500ms ease-in-out;
+    }
+
+    .localisation3 {
+        margin-left: 25%;
     }
 
     .bouttons {
@@ -872,6 +887,10 @@ img {
         width: 50px;
     }
    .follow{
+    display: none;
+   }
+
+   .SearchLogo {
     display: none;
    }
 }
