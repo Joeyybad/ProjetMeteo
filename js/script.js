@@ -122,7 +122,7 @@ function updateBodyBackground(temperature) {
                     fetchData(position.coords.latitude + ',' + position.coords.longitude);
                 });
             } else {
-                fetchData('Le_mans');  // You can change this to any default city
+                // fetchData('Le_mans');  // You can change this to any default city
             }
         }
 
